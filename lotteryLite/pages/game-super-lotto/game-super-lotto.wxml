@@ -1,0 +1,16 @@
+<import src="../template-lottery-header/template-lottery-header.wxml"  />
+<import src="../template-account/template-account.wxml"  />
+<view class="game-super-lotto">
+  <template is="lottery-header"></template>
+  <view class="lottp-content">
+    <view class='hint'>每位至少选择5个红球,2个蓝球</view>
+    <view class="red-ball-content">
+      <view class="ball-item" wx:for="{{redBall}}">{{item}}</view>
+    </view>
+    <view class="blue-ball-content">
+      <view class="ball-item" wx:for="{{blueBall}}">{{item}}</view>
+    </view>
+  </view>
+</view>
+<template is="account" data="{{...accountData}}"></template>
+

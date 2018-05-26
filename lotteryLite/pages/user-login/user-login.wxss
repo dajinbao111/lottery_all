@@ -1,0 +1,62 @@
+page{
+  background-color: #fafafa;
+}
+.container{
+  font-family: "微软雅黑";
+  font-size: 28rpx;  
+}
+.login_box{
+  background-color: #fff;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
+  margin-top: 32rpx;
+  padding-left: 32rpx
+}
+.login_box .telephone,.login_box .login_code{
+  height: 108rpx;
+  line-height: 108rpx;
+  color: #353535;
+  position: relative;
+}
+.login_box .telephone{
+  border-bottom: 1px solid #eae9e9;
+}
+.login_box .tele_input{
+  width: 568rpx;
+}
+.login_box .tele_input,.login_code input{
+  position: absolute;
+  top: 0;
+  left: 140rpx;
+  height: 100%;
+  line-height: 108rpx;
+  font-size: 28rpx;
+  color:#202020;
+}
+.login_code{
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.login_code input{
+  width: 300rpx;
+}
+.login_code button{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  background: #fff; 
+  border: 1px solid #1abdf9;
+  color: #1abdf9;
+  position: absolute;
+  top: 24rpx;
+  right: 64rpx;
+}
+.login_btn{
+  width: 702rpx;
+  margin:70rpx auto;
+  background: #ff5534;
+  color: #fff;
+}

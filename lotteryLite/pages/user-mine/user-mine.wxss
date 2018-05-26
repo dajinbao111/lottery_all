@@ -1,0 +1,197 @@
+page {
+    background-color: #f2f2f2
+}
+
+.container {
+    background: #fafafa;
+    font-family: "微软雅黑";
+    font-size: 28rpx;
+}
+
+.mine_info {
+    height: 166rpx;
+    background: #ff5534;
+    display: flex;
+    align-items: center;
+}
+
+.mine_avatar {
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+    margin-left: 24rpx;
+}
+
+.mine_nickName {
+    color: #fefff9;
+    margin-left: 20rpx;
+    font-family: "微软雅黑";
+    font-size: 30rpx;
+    padding: 30rpx
+}
+
+
+/* 账户 */
+
+.mine_account {
+    /* height: 216rpx; */
+    background: #fff;
+    border-top: 1px solid #edecec;
+    border-bottom: 1px solid #edecec;
+}
+
+.account_balance {
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 1px solid #f9f9f9;
+    padding-left: 48rpx;
+    position: relative;
+}
+
+.account_balance::after {
+    content: "";
+    width: 12rpx;
+    height: 12rpx;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform: translate(0, -50%) rotate(45deg)
+}
+
+.account_icon {
+    position: absolute;
+    left: 24rpx;
+    top: 50%;
+    width: 46rpx;
+    height: 46rpx;
+    transform: translate(0, -50%) scale(0.9)
+}
+
+.account_text {
+    margin-left: 48rpx;
+}
+
+.account_money {
+    position: absolute;
+    right: 160rpx;
+}
+
+.account_money text {
+    color: #ff5534;
+    font-weight: bold
+}
+
+.account_operation {
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.rechange,
+.cash {
+    position: relative;
+    text-align: center
+}
+
+.rechange {
+    width: 373rpx;
+    float: left;
+    border-right: 1px solid #f3f3f3;
+}
+
+.cash {
+    width: 50%;
+    float: right
+}
+
+.rechange_icon,
+.cash_icon {
+    width: 56rpx;
+    height: 38rpx;
+    position: absolute;
+    top: 50%;
+    left: 90rpx;
+    transform: translate(0, -50%) scale(0.9)
+}
+
+
+/* 购彩记录 */
+
+.records_show,
+.admin_privileges {
+    margin-top: 28rpx;
+    border-top: 1px solid #edecec;
+    border-bottom: 1px solid #edecec;
+    padding-left: 24rpx;
+    background-color: #fff;
+}
+
+.records_show navigator,
+.admin_privileges navigator {
+    position: relative;
+    padding: 27rpx 60rpx 27rpx 20rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+    overflow: hidden;
+    font-size: 28rpx;
+    font-weight: bold
+}
+
+.records_show navigator::after,
+.admin_privileges navigator::after,
+.btn_wrap navigator::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 30rpx;
+    width: 12rpx;
+    height: 12rpx;
+    border-top: 1rpx solid #999;
+    border-right: 1rpx solid #999;
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.buyers_recode .admin_text {
+    float: right;
+    color: #b6b5b5;
+    font-size: 24rpx;
+}
+
+
+/* 管理员操作按钮 */
+
+.btn_wrap {
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 28rpx;
+    font-family: "微软雅黑";
+    position: relative
+}
+
+.btn_wrap .btn_navi {
+    border-top: 1px solid #f2f2f2;
+    font-weight: normal;
+    padding-left: 30rpx;
+}
+
+
+/*徽章*/
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px;
+    position: absolute;
+    right: 60rpx;
+    top: 28rpx
+}

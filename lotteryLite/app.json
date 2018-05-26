@@ -1,0 +1,61 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/bet-foot/bet-foot",
+        "pages/user-bet-detail/user-bet-detail",
+        "pages/admin-notGetBonus/admin-notGetBonus",
+        "pages/admin-withdrawCash/admin-withdrawCash",
+        "pages/admin-noTicket/admin-noTicket",
+        "pages/user-mine/user-mine",
+        "pages/user-withdrawal-cash/user-withdrawal-cash",
+        "pages/payment-successful/payment-successful",
+        "pages/admin-allBills/admin-allBills",
+        "pages/user-login/user-login",
+        "pages/user-add-bank-cards/user-add-bank-cards",
+        "pages/bet-nine/bet-nine",
+        "pages/user-account-details/user-account-details",
+        "pages/follow/follow",
+        "pages/user-bet-record/user-bet-record",
+        "pages/game-passBarrie/game-passBarrie",
+        "pages/payment/payment",
+        "pages/arr-3-nextStep/arr-3-nextStep",
+        "pages/game-single/game-single",
+        "pages/game-nine/game-nine",
+        "pages/game-super-lotto/game-super-lotto",
+        "pages/game-arr-3/game-arr-3",
+        "pages/game-arr-5/game-arr-5",
+        "pages/arr-5-nextStep/arr-5-nextStep",
+        "pages/game-fourteen/game-fourteen",
+        "pages/user-select-banks/user-select-banks",
+        "pages/template-admin/template-admin"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ff5534",
+        "navigationBarTitleText": "关二爷体彩",
+        "navigationBarTextStyle": "white",
+        "backgroundColor": "#ff5534"
+    },
+    "tabBar": {
+        "color": "#94979c",
+        "selectedColor": "#ff5534",
+        "borderStyle": "black",
+        "backgroundColor": "#2a2d32",
+        "list": [{
+            "pagePath": "pages/index/index",
+            "iconPath": "pages/images/home.png",
+            "selectedIconPath": "pages/images/home-act.png",
+            "text": "购彩大厅"
+        }, {
+            "pagePath": "pages/index/index",
+            "iconPath": "pages/images/notice.png",
+            "selectedIconPath": "pages/images/notice-act.png",
+            "text": "用户必读"
+        }, {
+            "pagePath": "pages/user-mine/user-mine",
+            "iconPath": "pages/images/personal.png",
+            "selectedIconPath": "pages/images/personal-act.png",
+            "text": "个人中心"
+        }]
+    }
+}

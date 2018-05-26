@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.wisestar.lottery.mapper.UserAccountRecordMapper">
+
+    <select id="findByOpenIdAndAccountChange" resultType="org.wisestar.lottery.entity.UserAccountRecord">
+        select * from userAccountRecord where openId = #{openId}
+        <if test="accountChange != null">
+            and accountChange = #{accountChange}
+        </if>
+        order by recordTime desc
+    </select>
+
+</mapper>

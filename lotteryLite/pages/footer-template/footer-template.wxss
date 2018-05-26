@@ -1,0 +1,121 @@
+.footer {
+    height: 88rpx;
+    background-color: #414247;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%
+}
+
+.dele_btn {
+    width: 150rpx;
+    height: 88rpx;
+    background-color: #6d6d6f;
+    float: left;
+    position: relative
+}
+
+.dele_btn image {
+    width: 34rpx;
+    height: 44rpx;
+    position: absolute;
+    left: 54rpx;
+    top: 20rpx;
+}
+
+.show_selection_inf {
+    width: 520rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #fff;
+    float: left;
+    text-align: center
+}
+
+.next_step_btn {
+    width: 200rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-radius: 0;
+    background-color: #ff7701;
+    color: #fff;
+    float: right;
+    font-size: 28rpx;
+    text-align: center
+}
+
+.show_selection_inf text {
+    color: #fd9224;
+}
+
+
+/* 倍数 */
+
+i {
+    color: #000 !important
+}
+
+.multiple_bar {
+    width: 710rpx;
+    background-color: #fafafa;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-top: 1px solid #c9cdcc;
+    border-bottom: 1px solid #c9cdcc;
+    position: fixed;
+    bottom: 88rpx;
+    padding-left: 280rpx;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: #000
+}
+
+.multiple_bar input {
+    display: inline-block;
+    height: 56rpx;
+    line-height: 60rpx;
+    border: 1px solid #c6cac9;
+    background-color: #e8e7e7;
+    /*margin: 0 20rpx;*/
+    text-indent: 10rpx;
+    text-align: center;
+    width: 136rpx;
+    padding: 0 20rpx
+}
+
+
+/*+-*/
+
+.bet-wrapper {
+    height: 56rpx;
+    position: relative;
+    /*width: 212rpx;*/
+    display: flex;
+    margin: 0 10rpx;
+    height: 56rpx;
+    border: 1rpx solid #c6cac9;
+}
+
+.icon-jian-wrapper,
+.icon-jia-wrapper {
+    width: 64rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56rpx;
+}
+
+.icon-jianhao {
+    width: 34rpx;
+}
+
+.icon-iconjia {
+    margin-bottom: 6rpx;
+    width: 32rpx;
+}
+
+.single-inf {
+    line-height: 40rpx
+}

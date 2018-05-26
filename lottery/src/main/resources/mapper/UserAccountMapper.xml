@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.wisestar.lottery.mapper.UserAccountMapper">
+    
+    <update id="updateBankInfo">
+        update userAccount
+        set bankName = #{bankName}, bankAccount = #{bankAccount}, bankCard = #{bankCard}
+        where openId = #{openId}
+    </update>
+
+    <update id="updateBalance">
+        update userAccount set balance = #{balance} where openId = #{openId}
+    </update>
+</mapper>

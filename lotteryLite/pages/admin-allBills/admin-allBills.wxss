@@ -1,0 +1,368 @@
+/* public style */
+
+page,
+.container {
+    width: 100%;
+    height: 100%
+}
+
+page {
+    background-color: #f3f6f5;
+    font-family: "微软雅黑";
+    font-size: 28rpx;
+    color: #262626;
+    position: relative
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+
+/* list */
+
+.list_wrap {
+    background-color: #fff;
+    border-top: 1px solid #e9e9e9;
+    padding: 10rpx 80rpx 10rpx 40rpx;
+    position: relative;
+}
+
+.list_wrap:last-of-type {
+    border-bottom: 1px solid transparent;
+}
+
+.list_wrap:nth-of-type(even) {
+    background-color: #fbfbfb;
+}
+
+.list_wrap::after,
+.list_tit::after {
+    content: "";
+    width: 12rpx;
+    height: 12rpx;
+    position: absolute;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    top: 50%;
+    right: 30rpx;
+}
+
+.list_wrap::after {
+    transform: translate(0, -50%) rotate(-45deg);
+    transition: all 0.2s
+}
+
+.list_tit::after {
+    transform: translate(0, -50%) rotate(135deg);
+    transition: all 0.2s
+}
+
+.list_wrap .row {
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.fee,
+.time {
+    font-size: 24rpx;
+    color: #757575
+}
+
+
+/*  加载更多   */
+
+.weui-loading {
+    margin: 0 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    vertical-align: middle;
+    /* -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite; */
+}
+
+.weui-loadmore {
+    width: 65%;
+    margin: 40rpx auto;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.weui-loadmore__tips {
+    display: inline-block;
+    vertical-align: middle;
+    color: #b7b6b6
+}
+
+
+/* 展开内容 */
+
+.detail_inf_wrap {
+    background-color: #fef5f8;
+    padding-left: 20rpx;
+}
+
+.inf_content {
+    height: 80rpx;
+    line-height: 80rpx;
+    border-top: 2rpx dashed #f2f2f2;
+}
+
+.expand {
+    display: block
+}
+
+.inf_content > view {
+    float: left;
+    margin-right: 20rpx;
+}
+
+
+/* 暂无数据 */
+
+.noData {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    text-align: center;
+    transform: translate(0, -50%);
+    width: 100%
+}
+
+.noDataImg {
+    width: 120rpx;
+    height: 120rpx;
+    opacity: .5
+}
+
+.noData__tips {
+    font-size: 32rpx;
+    color: #adacac
+}
+
+
+/*展开内容css*/
+
+
+/* 内容 */
+
+
+/*.item-wrapper {
+    margin-bottom: 12rpx;
+}
+
+.plan_content {
+    padding-left: 40rpx;
+    background-color: #fffbef;
+    font-size: 28rpx;
+    font-family: "微软雅黑";
+    border-bottom: 1px solid #e9e9e9
+}
+
+.plan_inf {
+    border-bottom: 2rpx solid #eeeeee;
+    padding-right: 24rpx;
+    height: 70rpx;
+    font-size: 24rpx
+}
+
+.plan_inf .row {
+    line-height: 30rpx
+}
+
+.row > view {
+    float: left;
+}
+
+.plan_inf .weekday,
+.plan_inf .num {
+    color: #098417;
+    font-size: 24rpx;
+}
+
+.plan_inf .weekday {
+    margin-right: 30rpx;
+}
+
+.plan_inf .team {
+    margin-left: 100rpx;
+    color: #141414;
+    font-size: 24rpx;
+}
+
+.plan_inf .team text {
+    margin: 0 60rpx;
+    color: #505050;
+    font-size: 24rpx;
+}
+
+.plan_inf .plan_status {
+    color: #eb6101;
+    margin-right: 40rpx;
+}
+
+.type_row {
+    height: 108rpx;
+    line-height: 108rpx;
+    padding-right: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.type text {
+    color: #ff0000
+}
+
+.sure_betting_btn {
+    margin: 0 auto;
+    border: none;
+    background-color: #eb6101;
+    color: #fff;
+    width: 540rpx
+}
+
+.game_type_box {
+    padding-bottom: 40rpx;
+    background: #fffbef
+}*/
+
+.item-wrapper {
+    margin-bottom: 12rpx;
+}
+
+.plan_content {
+    padding-left: 40rpx;
+    background-color: #fffbef;
+    font-size: 28rpx;
+    font-family: "微软雅黑";
+    border-bottom: 1px solid #e9e9e9
+}
+
+.plan_inf {
+    border-bottom: 2rpx solid #eeeeee;
+    padding-right: 24rpx;
+    height: 70rpx;
+    font-size: 24rpx;
+    line-height: 70rpx
+}
+
+.plan_inf .row {
+    /*line-height: 30rpx;*/
+    font-size: 28rpx
+}
+
+.row > view {
+    float: left;
+}
+
+.plan_inf .weekday,
+.plan_inf .num {
+    color: #098417;
+    /*font-size: 24rpx;*/
+}
+
+.plan_inf .team {
+    margin-left: 10rpx;
+    color: #141414;
+    /*font-size: 24rpx;*/
+    margin-right: 20rpx
+}
+
+.plan_inf .team text {
+    margin: 0 6rpx;
+    color: #505050;
+    font-size: 24rpx;
+}
+
+
+/*.plan_status:first-of-type {
+    margin-left: 10rpx
+}*/
+
+.plan_inf .plan_status {
+    color: #ff7701;
+    margin-right: 16rpx;
+}
+
+.type_row {
+    height: 108rpx;
+    line-height: 108rpx;
+    padding-right: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.type text {
+    color: #ff0000
+}
+
+.sure_betting_btn {
+    margin: 0 auto;
+    border: none;
+    background-color: #eb6101;
+    color: #fff;
+    width: 540rpx
+}
+
+.game_type_box {
+    padding-bottom: 40rpx;
+    background: #fffbef
+}
+
+.type {
+    margin-right: 90rpx
+}
+
+.type-wrapper {
+    height: 60rpx;
+    line-height: 60rpx
+}
+
+
+/*14场和9*/
+
+.team-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-info-wrapper view {
+    width: 36rpx;
+    font-size: 30rpx;
+    word-wrap: break-word;
+}
+
+
+/*14和9的展开*/
+
+.game-fourteen-type-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 26rpx;
+    padding-bottom: 10rpx;
+    padding-top: 10rpx
+}
+
+.team-info-wrapper .text {
+    font-size: 36rpx;
+    word-wrap: break-word;
+    padding-left: 4rpx
+}
+
+.name-color {
+    color: #0b7e07;
+}
+
+.amount-color {
+    color: #ff7701;
+}
+
+.point-color {
+    color: #ff0000 !important
+}

@@ -1,0 +1,107 @@
+
+ <view class="container">
+  <block wx:for="{{dataList}}">
+    <view class="content-wrapper">
+    <view class="list_wrap " >
+      <view class='row'>
+        <text class='type_name'>{{item.lotteryTypeText}}</text>
+        <text class='status fr'>{{item.betStateText}} <!--<text class="amount-color" wx:if="{{item.winAmount != 'null'}}">{{item.winAmount}}元</text>--> </text>
+      </view>
+      <view class='row'>
+        <text class='fee'>  <text class="name-color">{{item.nickname}}</text> 投注 <text class="amount-color"> {{item.betAmount}}  </text>元</text>
+        <text class='time fr'>{{item.betTime}}</text>
+      </view>
+    </view>
+    <!-- 展开后的内容 -->
+    <view class="detail_inf_wrap ">
+    <!--要用的竞彩的-->
+    <view wx:if="{{item.lotteryType == 7||item.lotteryType == 8}}">
+      <block wx:for="{{item.detailList}}" wx:for-item="info">
+        <view class="plan_inf" >
+            <view class='row clearfix'>
+              <view class='weekday'>{{info.weekday}}</view>
+              <view class='team'>{{info.hostTeam}}<text>vs</text>{{info.guestTeam}}
+              </view>
+              <view class='plan_status' 
+                    wx:for="{{info.ratioList}}" 
+                    wx:for-item="ation">
+              <text wx:if="{{ation.rangqiu != 0}}">®</text> 
+              <text> {{ation.bet==3?'胜':ation.bet==1?'平':ation.bet==0?'负':false}}</text>
+
+              </view>
+            </view>
+        </view>
+      </block>
+      <view class="type-wrapper clearfix">
+        <view class='type pull-left'>
+            过关方式：
+            <text>{{item.passType}}</text>
+        </view>
+        <view class='show_selection_inf pull-left'>
+          {{item.piece}}注 {{item.times}}倍 {{item.betAmount}}元
+        </view>
+      </view>
+      <!--管理员操作按钮-->
+
+        <view class="btn-wrapper clearfix">
+          <view class="weui-uploader__input-box">
+              <view class="weui-uploader__input" bindtap="chooseImage" data-betno="{{item.betNo}}">
+                  <image data-betno="{{item.betNo}}" src="{{item.imgSrc}}" class="admin-img"></image>
+
+              </view>
+          </view>
+          <view class="admin-btn-wrapper">
+          <button class="admin-btn" type="primary" bindtap="enter" data-betno="{{item.betNo}}" data-imgsrc="{{item.imgSrc}}" disabled="{{item.disabledFlag}}" data-index="{{index}}">出票</button>
+          <button class="admin-btn notTicker" type="warn" bindtap="notTicker" data-betno="{{item.betNo}}" data-imgsrc="{{item.imgSrc}}" disabled="{{item.disabledFlag}}" data-index="{{index}}">不出票</button>
+          </view>
+        </view>
+            <!--管理员操作按钮-->
+    </view>
+
+    <!--要用的竞彩的-->
+
+    <!--14要用的-->
+        <block wx:if="{{item.lotteryType == 5||item.lotteryType == 6}}">
+          <view class="game-fourteen-type-wrapper">
+            <view>第{{item.phaseId}}期</view>
+            <view>{{item.passType}}</view>
+            <view>{{item.piece}}注</view>
+            <view>{{item.times}}倍</view>
+            <view>合计{{item.betAmount}}元</view>
+          </view>
+          <view class="team-info-wrapper" >
+            <view wx:for="{{item.detailList}}"  wx:for-item="ation">{{ation.hostTeam}} <view class="text">{{ation.bet}} </view> </view>
+          </view>
+          <view>
+          </view>
+          <view class="btn-wrapper clearfix">
+            <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage" data-betno="{{item.betNo}}">
+                 <image data-betno="{{item.betNo}}" src="{{item.imgSrc}}" class="admin-img"></image>
+                </view>
+            </view>
+            <view class="admin-btn-wrapper">
+              <button class="admin-btn" type="primary" bindtap="enter" data-betno="{{item.betNo}}" data-imgsrc="{{item.imgSrc}}" disabled="{{item.disabledFlag}}" data-index="{{index}}">出票</button>
+              <button class="admin-btn notTicker" type="warn" bindtap="notTicker" data-betno="{{item.betNo}}" data-imgsrc="{{item.imgSrc}}" disabled="{{item.disabledFlag}}" data-index="{{index}}">不出票</button>
+            </view>
+          </view>
+        </block>
+    </view>
+    </view>
+  </block>
+  <view bindtap="fetchData" class="getData">获取数据</view>
+   <view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+     <!-- <image class="weui-loading" src='../images/noMoreData.png'></image>  -->
+    <view class="weui-loadmore__tips">— 没有更多数据了 —</view>
+  </view> 
+</view> 
+
+<view class="noData" wx:if="{{dataFlag}}">
+   <image class="noDataImg" src='../images/noMoreData.png'></image> 
+   <view class="noData__tips">客官，暂无记录喲~~</view>
+</view> 
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->
+

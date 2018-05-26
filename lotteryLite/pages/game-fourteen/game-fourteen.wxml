@@ -1,0 +1,22 @@
+<import src="../template-picker-header/template-picker-header.wxml"  />
+<import src="../template-game-fourteen-nine/template-game-fourteen-nine.wxml"  />
+<import src="../template-account/template-account.wxml"  />
+<view wx:if="{{viewFlag}}">
+  <view class="game-fourteen game-single">
+    <template is="picker-header" data="{{...optDate}}"></template>
+    <template is="game-fourteen-nine" data="{{...mathContent}}"></template>
+  </view>
+  <template is="account" data="{{...accountData}}"></template>
+</view>
+<view wx:else class="no-data">
+  <image class='open_soon' src='../images/openSoon.png'></image> 
+  <view class='text'>即将开售，敬请期待！</view>
+  <navigator class='toIndex' url="../index/index" open-type="switchTab">
+    返回首页
+  </navigator>
+</view>
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->
+

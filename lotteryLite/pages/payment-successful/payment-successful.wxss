@@ -1,0 +1,71 @@
+page {
+    background-color: #ecf0ef;
+}
+
+.content {
+    height: 380rpx;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.content .suc_icon {
+    width: 102rpx;
+    height: 102rpx;
+    /*position: absolute;*/
+    /*top: 60rpx;*/
+    margin-top: 60rpx
+}
+
+.content .text {
+    font-size: 28rpx;
+    color: #141414;
+    font-family: '微软雅黑';
+    /*position: absolute;
+    top: 180rpx;*/
+}
+
+.content .amount {
+    /*position: absolute;
+    top: 228rpx;*/
+    font-size: 28rpx;
+    color: #ff7701;
+    font-family: '微软雅黑';
+}
+
+.content .notice {
+    font-size: 28rpx;
+    color: #9fa0a0;
+    font-family: '微软雅黑';
+    margin-top: 30rpx
+}
+
+.btn_wrap {
+    margin-top: 44rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.btn_wrap button {
+    float: left;
+    width: 340rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    font-family: "微软雅黑"
+}
+
+.btn_wrap .go_on {
+    background-color: #09bd04;
+    color: #fff;
+    border: 1px solid #079d03;
+}
+
+.btn_wrap .view_records {
+    background-color: #ecf0ef;
+    border: 1px solid #acabab;
+    color: #797979
+}

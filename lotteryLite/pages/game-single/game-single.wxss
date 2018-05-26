@@ -1,0 +1,9 @@
+@import "single-template/single-template.wxss";
+@import "../template-account/template-account.wxss";
+page {
+    background-color: #eeefed;
+}
+
+#game-passBarrie {
+    padding-top: 54rpx
+}

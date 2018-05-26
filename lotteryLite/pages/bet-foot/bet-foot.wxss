@@ -1,0 +1,514 @@
+@import "../template-account/template-account.wxss";
+page {
+    height: 100%;
+    width: 100%
+}
+
+.foot-bet {
+    height: 80%;
+    overflow-y: auto;
+    width: 100%;
+    background-color: #ecf0ef;
+    padding-bottom: 40rpx;
+    width: 100%
+}
+
+
+/*头部*/
+
+
+/*.bet-header {
+    height: 70rpx;
+    padding: 20rpx
+}
+
+.back-btn {
+    background-color: #fff;
+    height: 66rpx;
+    border: 1rpx solid #c9cbca;
+    box-shadow: 0px 0px 5px #c9cbca;
+    border-radius: 8rpx;
+    color: #fa8508;
+    line-height: 66rpx;
+    font-size: 26rpx;
+    text-align: center
+}*/
+
+
+/*/头部*/
+
+
+/*选择赛事部分*/
+
+.issue-match-wrapper {
+    width: 700rpx;
+    position: relative;
+    background-color: #fff;
+    /*padding-bottom: 13rpx;*/
+    margin-top: 23rpx;
+    z-index: 2;
+    margin: 28rpx;
+    padding-bottom: 14rpx;
+    /*height: 100rpx;*/
+    box-shadow: 0px 10rpx 5rpx #ddd inset;
+    /*background: url('../images/wx-foot-bet-bgc.png') bottom left;*/
+}
+
+.issue-match-wrapper::after {
+    content: "";
+    position: absolute;
+    background-color: #8c8e8d;
+    /*background-color: red;*/
+    width: 718rpx;
+    height: 10rpx;
+    border-radius: 20rpx;
+    z-index: 1;
+    left: -5rpx;
+    top: -6rpx
+}
+
+.classname image {
+    width: 72rpx;
+    height: 72rpx
+}
+
+.accordion-tit {
+    font-size: 26rpx;
+    color: #444;
+    margin-left: 48rpx
+}
+
+.classname i {
+    float: right;
+    margin-right: 52rpx;
+    font-size: 26rpx;
+    color: #8d8d8d
+}
+
+.match-left {
+    width: 130rpx;
+    color: #4f5352;
+    text-align: center;
+    font-size: 24rpx;
+    padding-top: 86rpx
+}
+
+.mathc-right {
+    width: 480rpx;
+    /*display: flex*/
+    text-align: center
+}
+
+.match-opt-item {
+    display: flex
+}
+
+.match-item-title {
+    font-size: 26rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.match-item-score {
+    width: 40rpx;
+    background-color: #e5e4e0;
+    color: #0b0b0b;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 26rpx;
+    border-bottom: 1rpx solid #d8d8d8
+}
+
+.match-item-score-last {
+    background-color: #e5e4e0;
+    background-color: #a6c8e3;
+    color: #fc9605
+}
+
+.match-item-victory {
+    width: 170rpx;
+    height: 72rpx;
+    background-color: #fff;
+    font-size: 24rpx;
+}
+
+.match-opt {
+    /*border: 1rpx solid #d8d8d8;*/
+    border-right: none
+}
+
+.match-opt-top .match-item-victory {
+    border-right: 1rpx solid #d8d8d8;
+    border-bottom: 1rpx solid #d8d8d8;
+    background-color: #fff;
+    color: #fa9c6a;
+    border-top: 1rpx solid #d8d8d8;
+}
+
+.match-opt-bottom .match-item-victory {
+    border-right: 1rpx solid #d8d8d8;
+    color: #7fd7e3;
+    border-bottom: 1rpx solid #d8d8d8;
+}
+
+.match-item-victory view {
+    line-height: 38rpx
+}
+
+.listAuto {
+    border-top: 1rpx dashed #dad9d9
+}
+
+.list-item {
+    padding-bottom: 22rpx;
+    padding-left: 30rpx
+}
+
+.bet-del {
+    padding-top: 116rpx;
+}
+
+.del-btn-wrapper {
+    width: 52rpx;
+    height: 52rpx;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 50rpx;
+    border-radius: 50%;
+    margin-right: 18rpx
+}
+
+.del-btn-wrapper i {
+    color: #fff
+}
+
+
+/*协议*/
+
+.match-agreement {
+    font-size: 24rpx;
+    color: #969a99;
+    padding: 20rpx 60rpx
+}
+
+.match-agreement .org {
+    color: #ff7701
+}
+
+.bet-checkbox {
+    margin-top: 20rpx
+}
+
+
+/*投注*/
+
+page {
+    position: relative
+}
+
+.cathectic-wrapper {
+    height: 8.5%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 8%;
+    left: 0;
+    background-color: #fff;
+    border: 1rpx solid #c6cac9;
+    border-left: none;
+    border-right: none
+}
+
+.type-cathectic {
+    width: 50%;
+    border-right: 1rpx solid #c6cac9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26rpx
+}
+
+.type-cathectic span {
+    color: #ff5534
+}
+
+.multiple-cathectic {
+    width: 50%
+}
+
+.type-cathectic {
+    /*align-items: center;
+    justify-content: center*/
+}
+
+.bet-wrapper {
+    position: relative;
+    width: 212rpx;
+    display: flex;
+    margin: 0 10rpx;
+    height: 56rpx;
+    border: 1rpx solid #c6cac9
+}
+
+.multiple-cathectic {
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.bet-right-flexWrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.bet-input {
+    width: 110rpx;
+    border-left: 2rpx solid #e8e7e7;
+    border-right: 2rpx solid #e8e7e7;
+    height: 56rpx;
+    background-color: #e8e7e7;
+    text-align: center;
+    background-color: #fff;
+}
+
+.bet-right-world {
+    align-items: center;
+    line-height: 32rpx;
+}
+
+
+/*结算*/
+
+page {
+    position: relative
+}
+
+.account {
+    height: 8%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0
+}
+
+.del-trash image {
+    width: 54rpx;
+    height: 60rpx;
+    justify-content: center;
+    align-items: center
+}
+
+.del-trash {
+    width: 100rpx;
+    flex-grow: 1;
+    background-color: #6d6d6f;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.account-world {
+    flex-grow: 3;
+    background-color: #414247;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24rpx;
+    display: flex
+}
+
+.account-itemWorld-wrapper {
+    justify-content: center;
+    align-items: center
+}
+
+.account-entBtn {
+    background-color: #ff7701;
+    width: 150rpx;
+    flex-grow: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-entBtn view {
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*.account-entBtn image {
+    width: 32rpx;
+    height: 44rpx
+}*/
+
+
+/*/结算*/
+
+.active {
+    background-color: #ff7701 !important;
+    color: #fff !important;
+}
+
+.icon-jian-wrapper,
+.icon-jia-wrapper {
+    width: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56rpx
+}
+
+.icon-jianhao {
+    width: 34rpx
+}
+
+.icon-iconjia {
+    margin-bottom: 6rpx;
+    width: 32rpx
+}
+
+
+/*抽屉层*/
+
+.drawer_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.2;
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+.drawer_attr_box {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background: #fff;
+}
+
+.close_icon {
+    width: 25rpx;
+    height: 25rpx;
+    line-height: 20rpx;
+    font-size: 30rpx;
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+    padding: 10rpx;
+    color: #ccc;
+    border: 1rpx solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+    background: #fff;
+}
+
+.drawer_attr_content {
+    padding: 60rpx 20rpx 40rpx 20rpx;
+    overflow-y: scroll;
+}
+
+.drawer_desc {
+    font-size: 26rpx;
+    margin: 20rpx;
+}
+
+.btn {
+    width: 80%;
+    padding: 15rpx 0;
+    border-radius: 10rpx;
+    text-align: center;
+}
+
+.open_btn {
+    margin: 40rpx 10%;
+    border-radius: 10rpx;
+    background: #20bb21;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99999
+}
+
+.type-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20rpx
+}
+
+.type-item {
+    line-height: 60rpx;
+    width: 160rpx;
+    text-align: center;
+    border: 1rpx solid #bababa;
+    background-color: #e8e7e7;
+    color: #bababa;
+    font-size: 26rpx;
+    margin: 5rpx 5rpx 10rpx 5rpx
+}
+
+.item-chooseabled {
+    color: #000;
+    background-color: #fff;
+}
+
+.item-active {
+    color: #ff7701;
+    background-color: #fff;
+    border: 1rpx solid #ff7701
+}
+
+.type-span {
+    padding: 0 20rpx;
+    font-size: 26rpx
+}
+
+.bgccc {
+    background-color: #ccc !important;
+}
+
+
+/*权限判断高度*/
+
+.authorities {
+    height: 70%
+}
+
+.admin {
+    height: 6%;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 16.5%;
+    left: 0;
+}
+
+.radio-group {
+    /*margin-left: 400rpx;*/
+    margin-top: 6rpx;
+    text-align: right;
+    width: 100%;
+    padding-right: 10rpx
+}
+
+.radio {
+    margin-right: 20rpx
+}

@@ -1,0 +1,210 @@
+/* 大标题部分样式 */
+
+.game_menus_list .title {
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.game_menus_list .hint_img {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.game_menus_list .imgBox {
+    float: right;
+    height: 60rpx;
+    width: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.imgBox image {
+    width: 26rpx;
+    height: 16rpx;
+}
+
+.rotation {
+    transform: rotate(180deg)
+}
+
+.game_menus_list text {
+    float: left;
+    font-size: 26rpx;
+    color: #444;
+    margin-right: 16rpx;
+    letter-spacing: 2rpx;
+}
+
+.game_time {
+    margin-left: 100rpx;
+}
+
+
+/* 展开内容 */
+
+.allGamesBoxList {
+    background-color: #f6f8f8;
+    padding: 0 24rpx;
+}
+
+.oneGameDetail {
+    width: 702rpx;
+    padding: 20rpx 0
+}
+
+
+/* 左边 */
+
+.aside_section {
+    width: 120rpx;
+    height: 152rpx;
+    padding-top: 46rpx;
+    font-size: 26rpx;
+    text-align: center;
+    float: left
+}
+
+.aside_section view {
+    margin-bottom: 8rpx;
+    color: #4f5352
+}
+
+
+/* 右边表格,赛事主题信息 */
+
+.main_section {
+    /* height: 202rpx; */
+    box-sizing: border-box;
+    width: 572rpx;
+    float: right
+}
+
+
+/* 标题 */
+
+.gamesName {
+    height: 60rpx;
+    line-height: 60rpx;
+    display: flex;
+    justify-content: center
+}
+
+.first_game,
+.last_game {
+    font-size: 28rpx;
+    color: #4b4b4b
+}
+
+
+/* 表格 */
+
+.gameTable {
+    border: 1px solid #cbcbcb
+}
+
+.gameTable .row01 {
+    height: 100rpx;
+    border-bottom: 1px solid #d8d8d8
+}
+
+.not_let_ball {
+    width: 40rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #e5e4e0;
+    float: left;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.row01 .one_cell {
+    float: left;
+    font-size: 28rpx;
+    width: 174rpx;
+    /* height: 72rpx; */
+    text-align: center;
+    border-right: 1px solid #d8d8d8;
+    background-color: #fff;
+}
+
+.row01 .one_cell:last-of-type {
+    border: none
+}
+
+.one_cell .text_words,
+.text_rate {
+    line-height: 50rpx;
+    color: #f87207
+}
+
+.gameTable .row02 {
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.row02 .let_ball {
+    width: 40rpx;
+    height: 80rpx;
+    background-color: #a6c8e3;
+    float: left;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: #f87207
+}
+
+.row02 .let_ball_text {
+    font-size: 26rpx;
+    text-align: center;
+    color: #7e7e7e
+}
+
+.listAuto {
+    display: block
+}
+
+.active {
+    background-color: #ff7701 !important;
+}
+
+.active view {
+    color: #fff !important;
+}
+
+.no-data image {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+.no-data {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    margin: 300rpx auto;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.no-data .text {
+    color: #adacac;
+    margin-top: 120rpx;
+}
+
+.no-data .toIndex {
+    color: #ff5534;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-decoration: underline;
+}

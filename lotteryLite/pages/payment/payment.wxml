@@ -1,0 +1,62 @@
+<view class="info-wrapper">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">
+          <span class="sp-left">彩</span>
+          <span class="sp-right">种 :</span>
+        </view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-input">{{viewData.lottery}}</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">支付金额 :</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-input">{{viewData.payAmount}}</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">
+          <span class="sp-left">昵</span>
+          <span class="sp-right">称 :</span>
+        </view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-input">{{viewData.nickName}}</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">账户余额 :</view>
+      </view>
+      <view class="weui-cell__bd last-cell">
+        <view class="weui-input">{{viewData.balance|''}}</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-input recharge">
+          去充值 >
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="warn" bindtap="payEnter">确定</button>
+  </view>
+</view>
+
+<!--提示-->
+<view class="tip">
+  <view class="tip-top">彩票购买有巨大的风险，请务必谨慎投注。</view>
+  <view class="tip-med">请注意：竞彩足球以出票赔率为准来计算奖金，奖金=2x所选场次的 出票赔率值x倍数 </view>
+  <view class="tip-bot">投注风险提示：为避免竞彩出现官网临时投注暂停情况，建议您尽早投注。<span class="cor-org">《竞彩投注中介服务风险须知》</span> </view>
+</view>
+
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->

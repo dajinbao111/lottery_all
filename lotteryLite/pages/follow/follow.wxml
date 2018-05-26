@@ -1,0 +1,95 @@
+<!-- tab选项卡 -->
+<scroll-view scroll-x="true" class="xscroll_bar">
+    <view class="menu_item {{index==activeIndex?'active':''}}" 
+          style="width:{{itemWidth}};" wx:for="{{menus}}"
+          bindtap="tabChange" data-index="{{index}}">
+        <view class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+          {{item.menu}}
+        </view>
+    </view>
+</scroll-view>
+<!-- 方案 -->
+  <view class="index-list" style="height:{{_height}}px" >
+      <view class="scroll-wrapper">
+        <block wx:for="{{followBill}}">
+          <view class="item-wrapper">
+            <!-- 标题 -->
+            <view class="item-title {{!item.onoff?'planTile':''}}"
+                  bindtap='tagtap' data-idx="{{index}}">
+              <view class='text pull-left'>{{item.bigTitle}}</view>
+              <view class='dueTime pull-right'>{{item.deadlineTime}} 截止</view>
+            </view><!-- 标题 end -->
+            <!-- 方案内容 -->
+            <view class="plan_content {{item.onoff?'expand':'hide'}}">
+            <!--竞彩的-->
+              <block wx:for="{{item.gameInfo}}" wx:for-item="info" wx:if="{{activeIndex == 0}}">
+                <view class="plan_inf">
+                    <view class='row clearfix'>
+                      <view class='weekday'>{{info.weekday}}</view>
+                      <!--<view class='num'>{{info.gameNum}}</view>-->
+                      <view class='team'>{{info.hostTeam}}
+                      <text>vs</text> {{info.guestTeam}}</view>
+                    </view>
+                    <view class='row clearfix'><!-- 胜负及兑换率 -->
+                      <view class='plan_status' 
+                            wx:for="{{info.ratioList}}" 
+                            wx:for-item="ation">
+                      <text wx:if="{{ation.rangqiu != 0}}">({{info.rangqiu}})</text> 
+                      <text>{{ation.betView}}</text>
+                      <text>{{ation.ratio}}</text>     
+                      </view>
+                    </view>  
+                </view>
+              </block>
+              <!--竞彩的-->
+              <!--14的-->
+              <view class="team-wrapper" wx:for="{{item.detailList}}" wx:for-item="team" wx:if="{{activeIndex == 1||activeIndex == 2}}">
+                <view class="team-serial">{{team.serialId}}</view>
+                <view class="team">{{team.hostTeam}} vs {{team.guestTeam}}</view>
+                <view class="result">{{team.bet}}</view>
+              </view>
+              <!-- 投注方式、确认按钮 -->
+              <view class='game_type_box'>
+                  <view class='type_row'>
+                    <view class='type pull-left'>
+                        过关方式：
+                        <text>{{item.passType}}</text>
+                    </view>
+                    <!--显示几倍几注几元-->
+                                  <!-- 投倍数 -->
+                    <view class="multiple-cathectic pull-right">
+                      <view class="bet-right-flexWrapper">
+                        <span class="bet-right-world">投</span>
+                        <view class="bet-wrapper">
+                          <view class="icon-jian-wrapper" data-index="{{index}}" data-amount="{{item.betAmount}}" data-timeFlag="{{item.timeFlag}}" bindtap="minus">
+                            <i  class="iconfont icon-jianhao"></i>
+                          </view>
+                          <input class="bet-input" type="number" data-index="{{index}}" value="{{item.times}}" bindinput="bindMultiple"  />
+                          <view class="icon-jia-wrapper" data-index="{{index}}" data-amount="{{item.betAmount}}" data-timeFlag="{{item.timeFlag}}" bindtap="add">
+                            <i class="iconfont icon-iconjia"></i>
+                          </view>
+                        </view>
+                        <span class="bet-right-world">倍</span>
+                      </view>
+                    </view>
+                  </view>
+
+               <view class="detail-footer">
+                  <view class='show_selection_inf pull-left'>
+                    {{item.piece}}注 {{item.times}}倍 {{item.betAmount}}元
+                  </view>
+                  <button class='next_step_btn' disabled="{{!item.timeFlag}}" bindtap="betEnter"  data-index="{{index}}">确认投注</button>
+                  <view class="clearfix"></view>
+               </view>
+              </view>  
+            </view> <!-- plan_content end -->
+          </view><!-- /*item-wrapper end*/ -->
+        </block>
+
+      </view> <!-- /*scroll-wrappe end*/ -->
+</view>
+
+<!--引入wetoast-->
+<import src="../../wetoast/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+<!--引入wetoastEnd-->

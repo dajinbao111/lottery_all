@@ -1,0 +1,17 @@
+@import "../template-swiper/template-swiper.wxss";
+@import "../template-football/template-football.wxss";
+@import "../template-account/template-account.wxss";
+#game-passBarrie {
+    /*height: 92%;*/
+    padding-bottom: 12%;
+    position: relative
+}
+
+.active {
+    background-color: #ff7701 !important;
+    color: #fff !important;
+}
+
+.race-content-wrapper {
+    padding-top: 54rpx
+}

@@ -1,0 +1,77 @@
+ <view class="container">
+  <block wx:for="{{listItem}}">
+    <view class="list_wrap {{item.onoff?'':'list_tit'}}" 
+          data-idx="{{index}}" bindtap='bindExpand' data-betid="{{item.betId}}" data-betno='{{item.betNo}}' data-lotterytype="{{item.lotteryType}}">
+      <view class='row'>
+        <text class='type_name'>{{item.lotteryTypeText}}</text>
+        <text class='status fr'>{{item.betStateText}} <text class="amount-color" wx:if="{{item.winAmount != 'null'}}">{{item.winAmount}}元</text> </text>
+      </view>
+      <view class='row'>
+        <text class='fee'>  <text class="name-color">{{item.nickname}}</text> 投注 <text class="amount-color"> {{item.betAmount}}  </text>元</text>
+        <text class='time fr'>{{item.betTime}}</text>
+      </view>
+    </view>
+    <!-- 展开后的内容 -->
+    <view class="detail_inf_wrap {{item.onoff ? 'expand':'hide'}}">
+    <!--要用的竞彩的-->
+    <view wx:if="{{expandFlag}}">
+      <block wx:for="{{gameInfList.detailList}}" wx:for-item="info">
+        <view class="plan_inf">
+            <view class='row clearfix'>
+              <view class='weekday'>{{info.weekday}}</view>
+              <view class='team'>{{info.hostTeam}}<text class="{{info.point!=null?'point-color':''}}">{{info.point!=null?info.point:'vs'}}</text>{{info.guestTeam}}
+              </view>
+              <view class='plan_status' 
+                    wx:for="{{info.ratioList}}" 
+                    wx:for-item="ation">
+              <text wx:if="{{ation.rangqiu != 0}}">({{info.rangqiu}})</text> 
+              <text >{{ation.betView}}</text>
+              </view>
+            </view>
+        </view>
+      </block>
+      <view class="type-wrapper clearfix">
+        <view class='type pull-left'>
+            过关方式：
+            <text>{{gameInfList.passType}}</text>
+        </view>
+        <view class='show_selection_inf pull-left'>
+          {{gameInfList.piece}}注 {{gameInfList.times}}倍 {{gameInfList.betAmount}}元
+        </view>
+      </view>
+    </view>
+    <!--要用的竞彩的-->
+
+
+    <!--14要用的-->
+        <block wx:else>
+          <view class="game-fourteen-type-wrapper">
+            <view>第{{gameInfListFN.phaseId}}期</view>
+            <view>{{gameInfListFN.passType}}</view>
+            <view>{{gameInfListFN.piece}}注</view>
+            <view>{{gameInfListFN.times}}倍</view>
+            <view>合计{{gameInfListFN.betAmount}}元</view>
+          </view>
+          <view class="team-info-wrapper" >
+            <view wx:for="{{gameInfListFN.detailList}}">{{item.hostTeam}} <view class="text">{{item.bet}} </view> </view>
+          </view>
+          <view>
+          </view>
+        </block>
+    </view>
+  
+  </block>
+   <view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+     <!-- <image class="weui-loading" src='../images/noMoreData.png'></image>  -->
+    <view class="weui-loadmore__tips">— 没有更多数据了 —</view>
+  </view> 
+</view> 
+<view class="noData" wx:if="{{dataFlag}}">
+   <image class="noDataImg" src='../images/noMoreData.png'></image> 
+   <view class="noData__tips">客官，暂无记录喲~~</view>
+</view> 
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->
+

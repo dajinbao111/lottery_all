@@ -1,0 +1,39 @@
+@import "../template-picker-header/template-picker-header.wxss";
+@import "../template-account/template-account.wxss";
+@import "../template-game-fourteen-nine/template-game-fourteen-nine.wxss";
+.nine {
+    padding-bottom: 12%
+}
+
+.no-data image {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+.no-data {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    margin: 300rpx auto;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.no-data .text {
+    color: #adacac;
+    margin-top: 120rpx;
+}
+
+.no-data .toIndex {
+    color: #ff5534;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-decoration: underline;
+}
+
+
+/*内容状态*/

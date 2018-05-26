@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.wisestar.lottery.mapper.BetRecordMapper">
+
+    <parameterMap id="generateNoParamMap" type="java.util.Map">
+        <parameter property="prefix" mode="IN" jdbcType="VARCHAR"/>
+        <parameter property="betNo" mode="OUT" jdbcType="VARCHAR"/>
+    </parameterMap>
+    <select id="generateNo" parameterMap="generateNoParamMap" statementType="CALLABLE">
+        <![CDATA[
+        call generate_detNo(?,?)
+        ]]>
+    </select>
+
+    <select id="findByOpenIdAndStates" resultType="org.wisestar.lottery.entity.BetRecord">
+        select * from betRecord where 1=1
+        <if test="openId != null and openId != ''">
+            and openId = #{openId}
+        </if>
+        <if test="states != null and states.size() > 0">
+            and betState in
+            <foreach collection="states" item="state" open="(" separator="," close=")">
+                #{state}
+            </foreach>
+        </if>
+        order by betTime desc
+    </select>
+
+    <update id="updateState2NotPay">
+        <![CDATA[
+        update betRecord set betState = 2 where betState = 1 and betTime < date_sub(now(), interval 20 minute)
+        ]]>
+    </update>
+    
+    <update id="updateState2WinPrize">
+        update betRecord set betState = 7
+        <if test="winAmount != null">
+            , winAmount = #{winAmount}
+        </if>
+        where betNo = #{betNo} and betState = 5
+    </update>
+
+    <update id="updateState2NotWin">
+        update betRecord set betState = 6 where betNo = #{betNo} and betState = 5
+    </update>
+    
+    <update id="updateState2Ticket">
+        update betRecord set betState = 5 where betNo = #{betNo} and betState = 3
+    </update>
+    
+    <update id="updateState2NoTicket">
+        update betRecord set betState = 4 where betNo = #{betNo} and betState = 3
+    </update>
+
+    <select id="findWinPrize" resultType="org.wisestar.lottery.entity.BetRecord">
+        <![CDATA[
+        select * from betRecord where betState = 7
+        and updateTime >= concat(curdate(), ' 00:00:00')
+        and updateTime <= concat(curdate(),' 23:59:59')
+        ]]>
+    </select>
+    
+    <select id="findByStateAndType" resultType="org.wisestar.lottery.entity.BetRecord">
+        select * from betRecord where betState = #{state} and lotteryType in
+        <foreach collection="types" item="type" open="(" separator="," close=")">
+            #{type}
+        </foreach>
+    </select>
+</mapper>

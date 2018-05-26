@@ -1,0 +1,23 @@
+  <!-- 当前期 -->
+  <template name='arr-3-temp'>
+    <view class='current_box'>
+      <view class='pick_numbers'>
+        <view class='hint'>提示：请每位至少选择一位数字</view>
+        <view class='num_box'>
+          <block wx:for='{{numList}}'>
+            <view class='list_title'>
+              —<text>{{item.name}}</text> —
+            </view>
+            <view class='number_list' >
+              <block wx:for='{{item.numArray}}' wx:for-item="numArray"
+              wx:key='numArray.id'>
+                <view class="num_btn {{currentItem==numArray.id?'active_tag':''}}" bindtap='changeStyle' data-id='{{numArray.id}}'>
+                  {{numArray.number}}
+                </view>
+              </block>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+</template>

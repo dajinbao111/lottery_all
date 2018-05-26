@@ -1,0 +1,67 @@
+<template name='single_footer_tem'>
+  <view class='games_wrap'>
+    <block wx:for="{{accordionData}}" >
+      <!-- game_menus -->
+      <view class="game_menus_list">
+        <!-- 大标题部分start -->
+        <view class='title' bindtap='tagtap' data-idx="{{index}}">
+          <image class='hint_img' src='../images/single-game-icon.png'></image>
+          <text class='game_time'>{{item.title}}</text>
+          <text class='game_sums'>{{item.matchNum}}场比赛可投</text>
+          <view class='imgBox'>
+            <image src='../images/s-icon.png' class="{{item.checkFlag == true ? 'rotation':''}}"></image>
+          </view>
+        </view>
+        <!-- 大标题部分end -->
+        <!-- 展开部分start -->
+        <view class="allGamesBoxList {{(item.checkFlag == true)?'listAuto':'hide'}}" data-id='{{item.id}}'>
+          <block wx:for="{{item.data}}" wx:for-item="oneGameItem">
+            <view class='oneGameDetail clearfix'>
+              <view class='aside_section'>
+                <!-- 左边部分start -->
+                <view class='game_num'>{{oneGameItem.no}}</view>
+                <view class='game_type'>{{oneGameItem.gameEventType}}</view>
+                <view class='game_dueTime'>{{oneGameItem.mathchTime}}截止</view>
+              </view>
+              <!-- 左边部分end -->
+              <view class='main_section'>
+                <!-- 赛事主体部分start -->
+                <view class='gamesName '>
+                  <text class='first_game'>{{oneGameItem.hostTeam}}</text>
+                  <text class='vs'>VS</text>
+                  <text class='last_game'>{{oneGameItem.guestTeam}}</text>
+                </view>
+                <!-- 表格部分start -->
+                <view class='gameTable'>
+                  <view class='row01 clearfix'>
+                    <view class='not_let_ball'>{{oneGameItem.rangqiu}}</view>
+                    <!-- 单元格循环 -->
+                    <block>
+                      <view class="one_cell {{oneGameItem.flag3 ? 'active':''}}" data-rangqiu="{{oneGameItem.rangqiu}}" data-gameid ="{{oneGameItem.gameId}}" data-ratio="{{oneGameItem.winRatio}}"  data-buy="3" bindtap="chooseAwards">
+                        <view class='text_words'>胜</view>
+                        <view class='text_rate'>{{oneGameItem.winRatio}}</view>
+                      </view>
+                      <view class="one_cell {{oneGameItem.flag1 ? 'active':''}}" data-rangqiu="{{oneGameItem.rangqiu}}" data-gameid ="{{oneGameItem.gameId}}" data-ratio="{{oneGameItem.drawRatio}}" data-buy="1" bindtap="chooseAwards">
+                        <view class='text_words'>平</view>
+                        <view class='text_rate'>{{oneGameItem.drawRatio}}</view>
+                      </view>
+                      <view class="one_cell {{oneGameItem.flag0 ? 'active':''}}" data-rangqiu="{{oneGameItem.rangqiu}}" data-gameid ="{{oneGameItem.gameId}}" data-ratio="{{oneGameItem.loseRatio}}"  data-buy="0" bindtap="chooseAwards">
+                        <view class='text_words'>负</view>
+                        <view class='text_rate'>{{oneGameItem.loseRatio}}</view>
+                      </view>
+
+                  </block>
+                </view>
+              </view>
+              <!-- 表格部分end -->
+            </view>
+            <!-- 赛事主体部分end -->
+          </view>
+        </block>
+      </view>
+      <!-- 展开部分end -->
+    </view>
+    <!-- game_menus end -->
+  </block>
+</view>
+</template>

@@ -1,0 +1,22 @@
+<template name="account">
+  <view class="account">
+      <view class="del-trash" bindtap="delChoose">
+          <image src="../images/game-passBarrie-del.png"></image>
+      </view>
+      <view class="account-world">
+          <view class="account-itemWorld-wrapper" wx:if="{{footballFlag}}">
+              <view wx:if="{{typeFlag}}">请至少选择两场比赛</view>
+              <view wx:else>请选择一场比赛</view>
+              <view>您已经选择<span>{{matchNum}}</span>场</view>
+          </view>
+          <view class="account-itemWorld-wrapper" wx:else>
+            <view>
+                已选{{num}}场
+            </view>
+          </view>
+      </view>
+      <view class="account-entBtn" bindtap="enter">
+        <view>确定</view>
+      </view>
+  </view>
+</template>

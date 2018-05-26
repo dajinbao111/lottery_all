@@ -1,0 +1,13 @@
+<import src="../template-lottery-header/template-lottery-header.wxml" />
+<import src="../game-arr-3/arr-template/arr-template.wxml" />
+<import src="../footer-template/footer-template.wxml" />
+
+<view class='container'>
+  <!-- header -->
+  <template is="lottery-header"></template>
+  <!-- content -->
+  <template is="arr-3-temp" data='{{...arr_3_datas}}'></template>
+  <!-- footer -->
+   <template is='footer_temp01'> </template>
+
+</view>

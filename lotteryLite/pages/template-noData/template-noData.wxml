@@ -1,0 +1,7 @@
+
+<template name="noData">
+  <view class="noData" wx:if="{{dataFlag}}">
+    <image class="noDataImg" src='../images/noMoreData.png'></image> 
+    <view class="noData__tips">客官，暂无记录喲~~</view>
+  </view> 
+</template>

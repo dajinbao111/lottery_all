@@ -1,0 +1,32 @@
+<view class='container'>
+<form>
+  <view class='bank_cards_information'>
+      <view class='user'>
+      真实姓名：
+      <input class='user_name'  placeholder='请输入您的真实姓名' 
+             placeholder-style="placeholderStyle" value='{{userName}}' 
+             bindinput='userNameTap' bindblur='blurUserNameTap'>
+      </input>
+    </view>
+      <view class='cards'>
+      银行卡号：
+      <input class='card_number' type='number'  placeholder='请输入开户行卡号'
+             maxlength='23' placeholder-style="placeholderStyle"
+             bindinput='bankNumTap' bindblur='bindBlurTap'  
+             value='{{userInputCardNo}}' >
+      </input>
+    </view> 
+
+  </view>
+  <view class='btn_box'>
+      <button class='sure_btn' bindtap='submitTap'>
+          确定添加
+      </button>
+  </view>
+</form>
+  <view class='notition'>
+      注：因系统延迟，提现款会在第二天上午十点前打入账户，请耐心等待。
+  </view>
+<import src="../../wetoast/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+</view>

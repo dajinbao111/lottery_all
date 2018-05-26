@@ -1,0 +1,157 @@
+/* pages/others/xscroll_top_bar/xscroll_top_bar.wxss */
+
+Page {
+    background: #fbfbfb; 
+    height: 100%
+}
+
+.xscroll_bar {
+    /* overflow-y: hidden; */
+    height: 82rpx;
+    line-height: 82rpx;
+    white-space: nowrap;
+    display: flex;
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.2)
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.menu_item {
+    text-align: center;
+    font-size: 30rpx;
+    color: #7c7c7c;
+    float: left;
+    height: 78rpx;
+}
+
+
+/*目前暂时不支持伪类，边距的去除只能动态判断*/
+
+.xscroll_bar .active {
+    color: #f45719;
+    border-bottom:4rpx solid #ff5534;
+}
+.menu_content {
+    padding: 30rpx;
+}
+
+.menu_panel {
+    margin: 20rpx 20rpx 20rpx 0;
+    border-left: 10rpx solid #ccc;
+    font-size: 26rpx;
+}
+
+.menu_panel>view {
+    padding: 30rpx;
+    background: #ececec;
+    border-radius: 0 20rpx 20rpx 0;
+}
+
+
+/*内容部分*/
+
+
+/*内容部分样式*/
+
+.item-wrapper {
+    border-bottom: 2rpx solid #f8f8f8;
+    display: flex;
+    font-size: 26rpx;
+    /*padding: 0 40rpx;*/
+    height: 160rpx;
+    align-items: center;
+    color: #757575;
+    justify-content: space-between;
+    background-color: #fff;
+    padding-right: 20rpx;
+}
+.item-wrapper:nth-of-type(even){
+  background-color: #fbfbfb
+}
+.item-img-wrapper image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.item-img-wrapper {
+    /* margin-right: 20rpx; */
+    /*align-content: center;*/
+    /*height: 104rpx;*/
+    align-items: center;
+    margin-left: 24rpx;
+}
+
+.type-money-wrapper {
+    width: 240rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+ .item-status-wrapper {
+    width: 240rpx;
+} 
+ 
+ /* .item-status {
+   font-weight: bold;
+}   */
+
+.item-fw {
+     /* font-weight: bold;  */
+    font-size: 28rpx;
+    line-height: 50rpx;
+    color: #121212
+}
+.sumMoney{
+  color: #ff5534
+}
+.item-winAmount {
+    color: red !important;
+    font-size: 30rpx;
+}
+
+.index-list {
+    height: 100%;
+}
+
+.scroll-wrapper {
+    padding-top: 80rpx
+}
+page {
+    height: 100%
+}
+/* 暂无数据 */
+.noData{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  transform: translate(0,-50%);
+  width: 100%
+}
+.noDataImg{
+  width:120rpx;
+  height: 120rpx;
+  opacity: .5
+}
+.noData__tips{
+  font-size: 32rpx;
+  color: #adacac
+}
+.noData .toIndex{
+  color: #ff5534;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-decoration: underline;
+}

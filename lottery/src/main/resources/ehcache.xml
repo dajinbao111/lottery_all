@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+    <!--
+        maxElementsInMemory 缓存中允许创建的最大对象数
+        eternal 缓存中对象是否为永久的
+        timeToLiveSeconds   缓存数据的生存时间
+        memoryStoreEvictionPolicy   缓存满了之后的淘汰算法
+     -->
+    <cache name="gameInfo"
+           maxElementsInMemory="200"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU">
+    </cache>
+
+    <cache name="gameInfoWithResult"
+           maxElementsInMemory="200"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU">
+    </cache>
+
+    <cache name="fourteenGames"
+           maxElementsInMemory="20"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU">
+    </cache>
+
+    <cache name="fourteenGamesWithResult"
+           maxElementsInMemory="10"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU">
+    </cache>
+    
+    <cache name="betRecord"
+           maxElementsInMemory="200"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU">
+    </cache>
+
+    <cache name="users"
+           maxElementsInMemory="100"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU">
+    </cache>
+</ehcache>

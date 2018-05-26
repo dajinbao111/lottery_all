@@ -1,0 +1,33 @@
+<template name='betting_information'>
+  <view class='betting_inf'>
+    <image src='../images/box-bg01.png' class='inf_bg_top'></image>
+    <!-- 投注列表循环 -->
+    <block wx:for="{{bettingList}}">
+      <view class='direct_betting'>
+        <view class='betting_num'>{{item.betting_num}}</view>
+        <view class='betting_statistics'>
+          <text class='type'>{{item.bettingType}}</text>
+          <text class='sum'>{{item.sum}}</text>
+        </view>
+        <image class='delete_one_btn' src='../images/dele_btn.png'></image>
+      </view>
+    </block>
+    <view class='bg_bottom_box'>
+       <image class='inf_bg_bottom' src='../images/box-bg02.png'></image> 
+    </view>
+    <!-- 提示部分 -->
+    <view class='notice'>
+      注：请认真阅读
+      <text>《关二爷足彩服务协议》</text>，
+      再进行进一步的购彩操作。
+    </view>
+    <!-- 阅读并同意协议 -->
+    <view class='agreement'>
+      <checkbox checked='checked' 
+      style='transform:scale(.9)'></checkbox>
+      我已阅读并同意
+      <text>《关二爷足彩服务协议》</text>
+    </view>
+  </view>
+</template>
+

@@ -1,0 +1,143 @@
+/*手风琴*/
+
+.list {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.list-right {
+    float: right
+}
+
+.classname {
+    border-bottom: 1px solid #E1E1E1;
+    height: 70rpx;
+    line-height: 62rpx;
+    background-color: #fff;
+    /*padding-left: 10rpx;
+    padding-right: 10rpx;*/
+    /*font-weight: bold;*/
+}
+
+.list-item {
+    /*height: 60rpx;*/
+    /*line-height: 52rpx;*/
+    /*padding-left: 20rpx;
+    padding-right: 20rpx;*/
+    border-bottom: 1rpx solid #E1E1E1;
+    font-size: 30rpx;
+    background-color: #f6f8f8;
+    padding-bottom: 45rpx
+}
+
+.classname .box {
+    height: 100rpx;
+}
+
+.listAction {
+    /* background: #5C93D3; */
+    /*border: none;*/
+    /*width: 100%*/
+}
+
+.listAuto {
+    /*注意，过渡效果必须使用px单位才有效，使用auto和百分比都无效。
+  所以如果需要展开动画的话，高度就得px单位写死。
+  如果要高度自适应使用height:auto，但是没有动画  
+  */
+    /*height: 370rpx;*/
+    display: block;
+    transition: height .3s;
+}
+
+
+/*剪切部分*/
+
+.classname image {
+    width: 72rpx;
+    height: 72rpx
+}
+
+.accordion-tit {
+    font-size: 26rpx;
+    color: #444;
+    margin-left: 48rpx
+}
+
+.classname i {
+    float: right;
+    margin-right: 52rpx;
+    font-size: 26rpx;
+    color: #8d8d8d
+}
+
+.match-left {
+    width: 153rpx;
+    color: #4f5352;
+    text-align: center;
+    font-size: 24rpx;
+    padding-top: 70rpx
+}
+
+.mathc-right {
+    width: 550rpx;
+    /*display: flex*/
+    text-align: center
+}
+
+.match-opt-item {
+    display: flex
+}
+
+.match-item-title {
+    font-size: 26rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.match-item-score {
+    width: 40rpx;
+    background-color: #e5e4e0;
+    color: #0b0b0b;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 26rpx;
+    border-bottom: 1rpx solid #d8d8d8
+}
+
+.match-item-score-last {
+    background-color: #e5e4e0;
+    background-color: #a6c8e3;
+    color: #fc9605
+}
+
+.match-item-victory {
+    width: 170rpx;
+    height: 72rpx;
+    background-color: #fff;
+    font-size: 24rpx
+}
+
+.match-opt {
+    border: 1rpx solid #d8d8d8;
+    border-right: none
+}
+
+.match-opt-top .match-item-victory {
+    border-right: 1rpx solid #d8d8d8;
+    border-bottom: 1rpx solid #d8d8d8;
+    background-color: #fff;
+    color: #fa9c6a
+}
+
+.match-opt-bottom .match-item-victory {
+    border-right: 1rpx solid #d8d8d8;
+    color: #7fd7e3
+}
+
+.match-item-victory view {
+    line-height: 38rpx
+}

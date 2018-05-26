@@ -1,0 +1,58 @@
+<import src="../template-swiper/template-swiper.wxml"  />
+<view class="index-wrapper-bgc">
+    <!-- 轮播图 -->
+    <template is="swiperImg" data="{{...sliderData}}"></template>
+    <!-- 轮播图 -->
+    <!-- 公告 -->
+    <view class="announcement">
+        <view class="announcement-left pull-left">公告</view>
+        <view class="pull-left announcement-wrapper">
+            <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+                <block wx:for="{{msgList}}">
+                    <swiper-item class="announcement-item">
+                    恭喜【{{item.nickname}}】{{item.lotteryType}}中奖{{item.winAmount}}元
+                    <span class="money"></span>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <!-- /公告 -->
+    <!-- 导航部分 -->
+    <view class="nav-wrapper">
+        <!-- 导航标题 -->
+        <view class="nav-title">
+            <text>热门彩种</text>
+        </view>
+        <!-- /导航标题 -->
+        <view class="nav">
+            <view class="nav-item-wrapper" wx:for="{{viewData}}">
+                <view class="nav-item nav-item-left" data-url="{{item.leftUrl}}" bindtap="navUrl">
+                    <view class="navbar">
+                        <image class="nav-logo pull-left" src="{{item.leftImg}}"></image>
+                        <view class="nav-world pull-left">
+                            <view class="nav-btn-title">{{item.leftTit}}</view>
+                            <view class="nav-btn-detail">{{item.leftDetails}}</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+                <view class="nav-item" data-url="{{item.rightUrl}}" bindtap="navUrl" data-onoff="{{item.flag}}">
+                    <view class="navbar">
+                        <image class="nav-logo pull-left" src="{{item.rightImg}}"></image>
+                        <view class="nav-world pull-left">
+                            <view class="nav-btn-title">{{item.rightTit}}</view>
+                            <view class="nav-btn-detail">{{item.rightDetails}}</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->

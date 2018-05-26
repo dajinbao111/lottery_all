@@ -1,0 +1,58 @@
+
+<template name="football">
+    <view class="container" wx:for="{{accordionData}}">
+        <!-- 大标题 -->
+        <view class="classname {{ (item.checkFlag == true) ? 'listAction' : ''}}"
+              data-id="{{item.idx}}" catchtap="shoufenqin">
+            <image class="pull-left" src="../images/wx-pass.png"></image>
+            <text class="accordion-tit">{{item.title}}  共{{item.matchNum}}场比赛</text>
+            <i class="accordion-i iconfont {{ (item.checkFlag == true) ?  'icon-shingle' :'icon-xiala'}}"></i>
+        </view>
+        <!-- 下拉显示部分 -->
+        <view class="box {{ (item.checkFlag == true) ? 'listAuto' : 'hide'}}" data-id="{{item.id}}" wx:for-item="matchItem" wx:for="{{item.data}}">
+            <view class="list-item">
+                <view class="match-left pull-left">
+                    <view class="mathch-no">{{matchItem.no}}</view>
+                    <view class="mathch-type">{{matchItem.gameEventType}}</view>
+                    <view class="mathch-time">{{matchItem.mathchTime}}截止</view>
+                </view>
+                <view class="mathc-right pull-left">
+                    <text class="match-item-title">{{matchItem.hostTeam}} VS {{matchItem.guestTeam}}</text>
+                    <view class="match-opt">
+                        <view class="match-opt-top match-opt-item">
+                            <view class="match-item-score">{{matchItem.hadRangqiu||'-'}}</view>
+                            <view class="match-item-victory {{matchItem.hadWinFlag == true ? 'active':''}}" data-gameid ="{{matchItem.gameId}}" data-ratio="{{matchItem.hadWinRatio}}" data-rangqiu="{{matchItem.hadRangqiu}}" data-buy="3" bindtap="chooseAwards">
+                                <view>主胜</view>
+                                <view>{{matchItem.hadWinRatio||'--'}}</view>
+                            </view>
+                            <view class="match-item-victory {{matchItem.hadDrawFlag ? 'active':''}}" data-gameid ="{{matchItem.gameId}}" data-ratio="{{matchItem.hadDrawRatio}}" data-rangqiu="{{matchItem.hadRangqiu}}" data-buy="1" bindtap="chooseAwards">
+                                <view>主平</view>
+                                <view>{{matchItem.hadDrawRatio||'--'}}</view>
+                            </view>
+                            <view class="match-item-victory {{matchItem.hadLoseFlag ? 'active':''}}" data-gameid ="{{matchItem.gameId}}" data-ratio="{{matchItem.hadLoseRatio}}" data-rangqiu="{{matchItem.hadRangqiu}}" data-buy="0" bindtap="chooseAwards">
+                                <view>主负</view>
+                                <view>{{matchItem.hadLoseRatio||'--'}}</view>
+                            </view>
+                        </view>
+                        <view class="match-opt-bottom match-opt-item">
+                            <view class="match-item-score match-item-score-last">{{matchItem.hhadRangqiu}}</view>
+                            <view class="match-item-victory {{matchItem.hhadWinFlag ? 'active':''}}" data-gameid ="{{matchItem.gameId}}" data-ratio="{{matchItem.hhadWinRatio}}" data-rangqiu="{{matchItem.hhadRangqiu}}" data-buy="3" bindtap="chooseAwards">
+                                <view>让胜</view>
+                                <view>{{matchItem.hhadWinRatio||'--'}}</view>
+                            </view>
+                            <view class="match-item-victory {{matchItem.hhadDrawFlag ? 'active':''}}" data-gameid ="{{matchItem.gameId}}" data-ratio="{{matchItem.hhadDrawRatio}}" data-rangqiu="{{matchItem.hhadRangqiu}}" data-buy="1" bindtap="chooseAwards">
+                                <view>让平</view>
+                                <view>{{matchItem.hhadDrawRatio||'--'}}</view>
+                            </view>
+                            <view class="match-item-victory {{matchItem.hhadLoseFlag ? 'active':''}}" data-gameid ="{{matchItem.gameId}}" data-ratio="{{matchItem.hhadLoseRatio}}" data-rangqiu="{{matchItem.hhadRangqiu}}" data-buy="0" bindtap="chooseAwards">
+                                <view>让负</view>
+                                <view>{{matchItem.hhadLoseRatio||'--'}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,53 @@
+<view class='container'>
+  <!-- 头像区域 -->
+  <view class='mine_info'>
+    <image class='mine_avatar' src="{{mineInfo.avatarUrl}}"></image>
+    <text class='mine_nickName' bindtap='navToLogin'>{{mineInfo.nickName}}</text>
+  </view>
+  <!-- 账户 -->
+  <view class='mine_account'>
+    <view class='account_balance' bindtap='goDetail'>
+      <image class='account_icon' src='{{mineAccount.accountIcon}}'></image>
+      <text class='account_text'>账户余额</text>
+      <text class='account_money'><text>{{mineAccount.howMoney}}</text>  元</text> 
+    </view>
+    <!-- 充值/提现 -->
+    <view class='account_operation'>
+      <view class='rechange'>
+      <navigator url=''>
+          <image class='rechange_icon' src='{{mineAccount.rechargeIcon}}                '></image>
+          <text class='rechange_text'>充值</text>
+      </navigator>
+      </view>
+      <view class='cash'>
+        <navigator url='../user-withdrawal-cash/user-withdrawal-cash'>
+          <image class='cash_icon' src='{{mineAccount.cashIcon}}'></image>
+          <text class='cash_text'>提现</text>        
+        </navigator>
+      </view>      
+    </view>    
+  </view>
+  <!-- 购彩记录 -->
+  <view class='records_show'>
+    <navigator class='all_recode' url='../user-bet-record/user-bet-record'> 
+      <text>购彩记录</text>
+    </navigator>
+  </view>
+  <view class='admin_privileges'>
+    <navigator class='buyers_recode' wx:if="{{privilegesFlag}}" url="../admin-allBills/admin-allBills"> 
+      <text>彩民投注</text>
+      <text class='admin_text'>查看全部投注</text>
+    </navigator>
+    <view class='order_classification'>
+        <view class='btn_wrap' wx:for="{{adminData}}" wx:if="{{item.adminFlag}}">
+          <navigator class='btn_navi'  url='{{item.toUrl}}'>{{item.btnText}}</navigator>
+          <text class="badge" wx:if="{{item.num != 0}}">{{item.num}}</text>
+        </view>
+    </view>  
+  </view>
+</view>
+
+<!--引入wetoast-->
+<import src="../../wetoast/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+<!--引入wetoastEnd-->

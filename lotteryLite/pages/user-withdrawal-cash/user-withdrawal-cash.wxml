@@ -1,0 +1,52 @@
+<view class='container'>
+  <view class='withdrawal_account'>
+    <view class='myAccount'>
+      <image src='../images/mine-icon/howMoney.png'></image>
+      账户余额 
+      <text class='money'><text>{{accountMoney}}</text> 元</text>
+    </view>
+    <view class='getMoney'>
+    <view class="pull-left">
+      <image src='../images/mine-icon/cash.png'></image>
+      提款金额
+      </view>
+      <input class='how_much' placeholder='请输入需提现的金额'
+             placeholder-style='color:#bababa' type='number' value='{{extractValue}}' bindinput='bindValue'> 
+      </input>
+      
+      <text class="pull-left amount-all" bindtap="extractAll">全部</text>
+    </view>
+    <view class="clearfix"></view>
+  </view>
+  <!-- 添加银行卡 -->
+  <view class='add_bank_cards'>
+    <view class='title'>
+      <image src='../images/mine-icon/recharge.png'></image>
+      我的银行卡   
+    </view>
+    <!-- 银行卡列表 -->
+     <view class='my_bankcards_list' wx:if="{{condition==true}}">
+      <view class='have_bankCard clearfix' >
+        <view class='bank_names pull-left'>{{bankName}}</view>
+        <view class='bank_num pull-right'>{{bankNum}}</view>   
+      </view>
+    </view> 
+    <view class='no_bankcards_wrap' wx:else> 
+        <view class='no_bankcards' >
+        <navigator url='../user-add-bank-cards/user-add-bank-cards' class='addBankCard'>
+           <view class='no_bankcards_text'>暂无银行卡，去添加 +</view>
+        </navigator>   
+      </view>    
+    </view>
+  </view>
+  <!-- 两个按钮 -->
+  <view class='cash_info_btn'>
+    <button size="default" class='sure_btn' bindtap="extractEnter">确认提现</button>
+     <!--<button class="weui-btn" type="primary">页面主操作 Normal</button>-->
+    <!--<button class='cash_recodes' bindtap='go_records'>查看提现记录</button>-->
+  </view>
+</view>
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->

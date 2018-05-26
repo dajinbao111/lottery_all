@@ -1,0 +1,26 @@
+<template name="game-fourteen-nine">
+  <view class="game-fourteen-content">
+    <view class="game-fourteen-content-wrapper" wx:for="{{mathData}}">
+      <view class="li-left pull-left">
+        <view class="mathch-no">{{item.no}}</view>
+        <view class="mathch-type">{{item.type}}</view>
+        <view class="mathch-time">{{item.time}}</view>
+      </view>
+      <view class="li-right pull-left">
+        <view class="li-right-team li-right-left {{item.flag3 ? 'active':''}}" data-serialid="{{item.no}}" data-phaseid="{{item.phaseId}}" data-buy="3" bindtap="chooseAwards">
+          <view class="li-right-t">{{item.homeTeam}}</view>
+          <view class="li-right-ccc">{{item.homeTeamOdds}}</view>
+        </view>
+        <view class="li-vs {{item.flag1 ? 'active':''}}" data-serialid="{{item.no}}" data-phaseid="{{item.phaseId}}" data-buy="1" bindtap="chooseAwards">
+          <view class="li-right-t">VS</view>
+          <view class="li-right-ccc">{{item.flatOdds}}</view>
+        </view>
+        <view class="li-right-team li-right-right {{item.flag0 ? 'active':''}}" data-serialid="{{item.no}}" data-phaseid="{{item.phaseId}}" data-buy="0" bindtap="chooseAwards">
+          <view class="li-right-t">{{item.visitingTeam}}</view>
+          <view class="li-right-ccc">{{item.homeLoseOdds}}</view>
+        </view>
+      </view>
+      <view class="clear"></view>
+    </view>
+  </view>
+</template>

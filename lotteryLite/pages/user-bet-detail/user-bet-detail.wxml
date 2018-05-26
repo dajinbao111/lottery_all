@@ -1,0 +1,147 @@
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->
+<view class="user-detail">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-left">
+      <image src="{{detail.typeImg}}"></image>
+      <text>{{detail.viewType}}</text>
+    </view>
+    <view wx:if="{{detail.betState == 7}}" class="header-right">
+      <image src="../images/win.png"></image>
+      <text class="color-red">{{detail.betStateText}}</text>
+    </view>
+    <view wx:if="{{detail.betState == 6}}" class="header-right">
+      <image src="../images/lose.png"></image>
+      <text class="not-lottery">{{detail.betStateText}}</text>
+    </view>
+    <view wx:if="{{detail.betState == 5}}" class="header-right">
+      <image src="../images/wait-userDetail.png"></image>
+      <text class="wait-lottery">{{detail.betStateText}}</text>
+    </view>
+  </view>
+  <!-- 头部 -->
+  <!-- 投注金额和时间 -->
+  <!-- /投注金额和时间 -->
+  <view class="amount-time-wrapper" wx:if="{{detail.betState==7||detail.betState==5||detail.betState==6}}">
+    <view class="amount-time-wrapper-left">
+      <view class="amount-wrapper">
+        <view>投注金额</view>
+        <view class="fz-med">{{detail.betAmount}}元</view>
+      </view>
+    </view>
+    <view class="amount-time-wrapper-right">
+      <view class="time-wrapper">
+        <view wx:if="{{detail.betState == 7}}" class="win-winMount-wrapper">
+          <view>中奖金额</view>
+          <view class="fz-med">{{detail.winAmount}}元</view>
+        </view>
+        <view wx:if="{{detail.betState == 5}}" class="win-winMount-wrapper">
+
+        <!--竞彩和单关的待开奖-->
+          <view class="race-single-wait" wx:if="{{detail.lotteryType == 7||detail.lotteryType == 8}}">
+            <view>理论奖金:</view>
+            <view class="fz-med">{{detail.bonus}}</view>
+          </view>
+              <!--/竞彩和单关的待开奖-->
+              <!--9和14待开奖-->
+          <view class="race-single-wait" wx:if="{{detail.lotteryType == 5||detail.lotteryType == 6}}">
+            <view>等待</view>
+            <view class="fz-med">开奖结果</view>
+          </view>
+              <!--/9和14待开奖-->
+
+        </view>
+        <view wx:if="{{detail.betState == 6}}" class="win-winMount-wrapper">
+          <view>感谢您</view>
+          <view class="fz-med">助力公益事业</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 投注内容 -->
+  <view class="detail-content">
+    <view class="detail-title">方案内容</view>
+    <view class="detail-sub-title">
+      <view class="detail-subTitle-left">主队 VS 客队</view>
+      <view class="detail-subTitle-med">
+        <view>赛果</view>
+      </view>
+      <view class="detail-subTitle-right">投注内容</view>
+    </view>
+    <!-- 竞彩和单关的 -->
+    <view class="jc-content-wrapper" wx:if="{{detail.lotteryType == 7||detail.lotteryType == 8}}">
+      <view class="jc-content" wx:for="{{detail.detailList}}" wx:for-item="item">
+        <view class="jc-content-left">
+          <view class="jc-week">{{item.weekday}}</view>
+          <view class="jc-team">
+            <text>{{item.hostTeam}}</text>
+            <text class="jc-rq" wx:if="{{item.rangqiu != 0||item.rangqiu != null}}">({{item.rangqiu}})</text>
+            <text  wx:if="{{!item.point}}">vs</text>
+            <text class="jc-score" wx:else="{{item.point}}">{{item.point}}</text>
+            <text>{{item.guestTeam}}</text>
+          </view>
+        </view>
+        <view class="jc-content-med">
+          <view class="jc-content-med-result" wx:for="{{item.ratioList}}" wx:for-item="victory">
+            <text wx:if="{{victory.result}}"> {{victory.result}} </text>
+          </view>
+        </view>
+        <view class="jc-content-right">
+          <view class="jc-content-rig-bet" wx:for="{{item.ratioList}}" wx:for-item="result">
+            <text wx:if="{{result.rangqiu != 0}}" class="{{result.result == '胜'?'red':''}}" >®</text><text class="{{result.result == '胜'?'red':'text-result'}}">{{result.bet==3?'胜':result.bet==1?'平':result.bet==0?'负':false}}({{result.ratio}})</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- /竞彩和单关的 -->
+    <!-- 9和14的 -->
+    <view class="jc-content-wrapper" wx:if="{{detail.lotteryType == 5||detail.lotteryType == 6}}">
+      <view class="fn-content" wx:for="{{detail.detailList}}" wx:for-item="item">
+        <view class="jc-content">
+          <view class="jc-content-left">
+            <view class="jc-week">{{item.serialId}}</view>
+            <view class="jc-team">
+              <text>{{item.hostTeam}} VS {{item.guestTeam}}</text>
+            </view>
+          </view>
+          <view class="jc-content-med">
+            <view class="jc-content-med-result" wx:if="{{item.result}}">{{item.result}}</view>
+          </view>
+          <view class="jc-content-right">
+            <view class="jc-content-rig-bet jc-content-rig-bet-fn">
+              <text wx:for="{{item.betArr[0]}}" wx:for-item="result" class="{{result == item.result?'red':'text-result'}}">{{result==3?'胜':result==1?'平':result==0?'负':''}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- /9和14的 -->
+    <view class="bet-info">
+      <view>
+        投注明细 : <text>{{detail.passType}} {{detail.piece}}注 {{detail.times}}倍 </text>
+      </view>
+    </view>
+    <view class="bet-info">
+      <view>
+        投注时间 : <text>{{detail.betTime}}</text>
+      </view>
+    </view>
+    <view class="bet-info">
+      <view>
+        投注编号 : <text  class="betNo-src" bindtap="imageSrc" data-src="{{detail.betNo}}">{{detail.betNo}}</text>
+        <!--<image src="https://www.wisestar.org/jenkins/static/7038df32/images/headshot.png"></image>-->
+        <!--<web-view src="https://www.wisestar.org/jenkins/static/7038df32/images/headshot.png">https://www.baidu.com/</web-view>-->
+      </view>
+    </view>
+  </view>
+  <!-- /投注内容 -->
+</view>
+<view class="footer-btn-wrapper">
+  <button class="footer-btn" type="warn" bindtap="navIndex">继续购彩</button>
+</view>
+<view class="img-wrapper {{imgFlag?'show':'hide'}}" bindtap="imgHide" >
+  <image src="{{betSrc}}" class="bet-img "></image>
+</view>

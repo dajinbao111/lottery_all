@@ -1,0 +1,40 @@
+<!--<template name="picker-header">
+  <view class="football-opt">
+    <picker wx:if="{{footballFlag}}" class="sf-select pull-left" bindchange="bindPickerChange" value="{{index}}"
+            range="{{optArr}}">
+      <view class="picker">
+        {{optArr[0]}}
+          <i class="iconfont icon-xiala select-icon">
+      </i>
+    </view>
+  </picker>
+  <view class="game-fourteen-wrapper" wx:else>
+    <span class="pull-left">  第 </span>
+    <picker  class="sf-else-game-fourteen sf-select pull-left" bindchange="bindPickerChange" value="{{index}}"
+            range="{{optArr}}">
+      <view class="picker">
+        {{optArr[0]}}
+          <i class="iconfont icon-xiala select-icon">
+      </i>
+    </view>
+  </picker>
+    <span class="pull-left">  期 </span>
+  <view class="dest-date pull-right">截止:{{endTime}}</view>
+</view>
+<view class="clear"></view>
+</view>
+</template>-->
+<template name="picker-header" >
+  <scroll-view scroll-x="true" class="xscroll_bar">
+  <view class="menu_item {{index==activeIndex?'active':''}}"  wx:for="{{optArr}}"
+        bindtap="tabChange" data-index="{{index}}">
+    <view class="border {{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">{{item}}</view>
+  </view>
+</scroll-view>
+  <view class="deadline">
+  <view class="pull-right deadline-view"> 
+     截止时间 <span>{{endTime}}</span>
+  </view>
+  <view class="clearfix"></view>
+  </view>
+</template>

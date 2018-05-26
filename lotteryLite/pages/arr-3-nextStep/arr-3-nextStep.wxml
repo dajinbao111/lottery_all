@@ -1,0 +1,15 @@
+<import src='../footer-template/footer-template.wxml'/>
+<import src='nextStep-template/nextStep-template.wxml'/>
+
+<view class='container'>
+  <button class='return_btn'>返回添加一注</button>
+
+  <!-- 投注详情列表 -->
+  <template is="betting_information" 
+            data="{{...bettingInformation}}">
+  </template>
+  
+  <!-- footer -->
+  <template is="multiple_temp"></template>
+  <template is="footer_temp02"></template>
+</view>

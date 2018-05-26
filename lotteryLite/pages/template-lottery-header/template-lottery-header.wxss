@@ -1,0 +1,65 @@
+page {
+    background-color: #ecf0ef;
+    font-family: "微软雅黑";
+    font-size: 28rpx;
+}
+
+
+/* 上期开奖 */
+
+.top_title,
+.current_title {
+    height: 88rpx;
+    background-color: #fff;
+    line-height: 88rpx;
+    padding: 0 24rpx;
+    color: #202020
+}
+
+.top_title {
+    border-bottom: 1px solid #eeeeec;
+}
+
+.top_title .rolling,
+.top_title .pre_lottery {
+    float: left;
+}
+
+.top_title .pre_lottery {
+    width: 540rpx;
+}
+
+
+/* public */
+
+.num {
+    color: #ff5534
+}
+
+
+/* 当前期彩票 */
+
+.wrap_box {
+    border-bottom: 2px solid #d8dbda;
+    height: 88rpx;
+    background-color: #fff;
+}
+
+.current_title {
+    width: 40%;
+    float: left;
+}
+
+.pick_numbers {
+    padding-bottom: 100rpx;
+}
+
+.wrap_box .date {
+    float: right;
+    width: 342rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: right;
+    padding-right: 60rpx;
+    color: #ff5534;
+}

@@ -1,0 +1,40 @@
+
+<view wx:if="{{!dataFlag}}">
+    <block wx:for="{{listItem}}">
+        <view class="getBonus-list-wrapper">
+            <view class="getBonus-top">
+                <view class="nickName">{{item.nickname}}(<text class="bank-account">{{item.bankAccount}}</text>)</view>
+
+                <view class="money">￥{{item.changeAmount}}</view>
+                <view class="time">{{item.recordTime}}</view>
+            </view>
+            <view class="getBonus-bot">
+                <view class="bank">{{item.bankName}} {{item.bankCardDetail}}</view>
+            </view>
+            <view class="item-btn-wrapper">
+            <!--<text class="pull-left green">复制成功</text>-->
+                <button class="item-btn copy-btn" size="mini" bindtap="copyName" data-bankaccount="{{item.bankAccount}}">复制姓名</button>
+
+                <button class="item-btn copy-btn" size="mini" bindtap="copyNum" data-bankcard="{{item.bankCard}}">复制卡号</button>
+
+                <button class="item-btn detail-btn" size="mini" bindtap="detail" type="primary" data-recordid="{{item.recordId}}">处理</button>
+            </view>
+        </view>
+    </block>
+    <!-- 无更多 -->
+    <view class="weui-loadmore" wx:if="{{isHideLoadMore}}">
+        <view class="weui-loadmore__tips">— 没有更多数据了 <text bindtap="navMine" class="back-mine">返回</text> —</view>
+    </view>
+</view>
+
+<view wx:else class="no-data">
+  <image class='open_soon' src='../images/openSoon.png'></image> 
+  <view class='text'>暂无需处理数据</view>
+  <navigator class='toIndex' url="../user-mine/user-mine" open-type="switchTab">
+    返回
+  </navigator>
+</view>
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->

@@ -1,0 +1,111 @@
+page {
+    background-color: #ecf0ef;
+}
+
+.weui-cells::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1rpx solid #D9D9D9;
+    color: #D9D9D9;
+}
+
+.weui-cells::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1rpx solid #D9D9D9;
+    color: #D9D9D9;
+}
+
+.weui-cells {
+    position: relative;
+    /*margin-top: 0.5rpx;*/
+    background-color: #FFFFFF;
+    line-height: 1.41176471;
+    font-size: 30rpx;
+}
+
+.weui-cell {
+    padding: 10px 15px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.weui-cell::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1rpx solid #D9D9D9;
+    color: #D9D9D9;
+    left: 15px;
+}
+
+.weui-label {
+    width: 168rpx;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 32rpx
+}
+
+.weui-input {
+    height: 88rpx;
+    min-height: 88rpx;
+    line-height: 88rpx
+}
+
+.weui-cell_input {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.sp-left {
+    margin-right: 50rpx
+}
+
+.last-cell {
+    width: 300rpx;
+    padding-right: 50rpx
+}
+
+.recharge,
+.cor-org {
+    color: #ffa067
+}
+
+.weui-btn-area {
+    margin: 1.17647059em 15px 0.3em;
+}
+
+.info-wrapper {
+    padding-bottom: 60rpx;
+    background-color: #fff;
+}
+
+.tip {
+    color: #969a99;
+    font-size: 28rpx;
+    padding: 0 30rpx
+}
+
+.tip-top {
+    line-height: 80rpx
+}
+
+.tip-med {
+    margin-bottom: 30rpx
+}

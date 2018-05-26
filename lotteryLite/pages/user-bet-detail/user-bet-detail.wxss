@@ -1,0 +1,313 @@
+/*头部*/
+
+page {
+    background-color: #fff;
+    height: 100%;
+    position: relative
+}
+
+.header {
+    display: flex;
+    height: 120rpx;
+    /*background-color: red;*/
+    padding: 0 20rpx;
+    justify-content: space-between;
+    border-bottom: 1rpx #ccc solid;
+    background-color: #fff;
+}
+
+.header-left,
+.header-right {
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.header-left {
+    font-size: 30rpx
+}
+
+.header-left text {
+    margin-left: 20rpx
+}
+
+.header-left image {
+    width: 84rpx;
+    height: 84rpx
+}
+
+.header-right image {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 10rpx
+}
+
+.color-red {
+    color: red
+}
+
+.header-right {
+    font-size: 30rpx
+}
+
+
+/*投注时间和金额*/
+
+.amount-time-wrapper {
+    display: flex;
+    /*background-color: red;*/
+    height: 120rpx;
+    align-items: center;
+    background-color: #fff;
+}
+
+.amount-time-wrapper-left {
+    border-right: 1rpx solid #ccc
+}
+
+.amount-time-wrapper-left,
+.amount-time-wrapper-right {
+    width: 50%;
+    text-align: center;
+    font-size: 28rpx
+}
+
+.amount-wrapper,
+.time-wrapper {
+    height: 80rpx;
+    /*background-color: yellow;*/
+}
+
+.amount-time-wrapper .fz-med {
+    font-size: 34rpx
+}
+
+.amount-wrapper {
+    color: #9d977d
+}
+
+.time-wrapper {
+    color: #e37f5d
+}
+
+
+/*内容*/
+
+.detail-title {
+    background-color: #f7f7f7;
+    color: #a1a1a1;
+    font-size: 26rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    padding-left: 40rpx
+}
+
+.detail-sub-title {
+    background-color: #f8f3f7;
+    border-top: 1rpx solid #e3dee2;
+    border-bottom: 1rpx solid #e3dee2;
+    height: 70rpx;
+    display: flex;
+    font-size: 30rpx;
+    color: #9f9f9f;
+    text-align: center;
+    line-height: 70rpx;
+}
+
+.detail-subTitle-left,
+.jc-content-left {
+    width: 50%;
+    /*background-color: red;*/
+}
+
+.detail-subTitle-right,
+.jc-content-right {
+    width: 35%;
+    /*background-color: #000;*/
+}
+
+.detail-subTitle-med,
+.jc-content-med {
+    width: 15%;
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    /*background-color: yellow;*/
+}
+
+.detail-subTitle-med view {
+    height: 70rpx;
+    line-height: 70rpx;
+    border: 1rpx solid #e1dce0;
+    border-top: none;
+    border-bottom: none;
+    /*padding: 0 20rpx;*/
+    width: 100%
+}
+
+.jc-content {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2rpx solid #eee;
+    padding: 20rpx 0
+}
+
+.jc-content-left,
+.jc-content-med,
+.jc-content-right {
+    /*min-height: 140rpx*/
+}
+
+.jc-content-left {
+    /*display: flex;*/
+    font-size: 26rpx;
+    text-align: center;
+    height: 80rpx;
+}
+
+.jc-week {
+    color: #bdbdbd
+}
+
+.jc-team {
+    color: #6c6c6c
+}
+
+.jc-rq {
+    color: #eb6101
+}
+
+.jc-score {
+    color: #a62027
+}
+
+.jc-content-med,
+.jc-content-right {
+    color: #777;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center*/
+}
+
+.jc-content-med-result {
+    width: 100%;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1rpx solid #efefef;
+    border-right: 1rpx solid #efefef;
+}
+
+.jc-content-rig-bet,
+.jc-content-med-result {
+    text-align: center;
+    /*line-height: 60rpx;*/
+    /*height: 60rpx;*/
+    font-size: 26rpx;
+}
+
+.red {
+    color: #d73825
+}
+
+.bet-info {
+    background-color: #fff;
+    font-size: 30rpx;
+    /*height: 70rpx;
+    line-height: 70rpx;*/
+    padding: 10rpx 20rpx;
+    border-bottom: 1rpx solid #efefef
+}
+
+.bet-info view {
+    color: #a1a1a1
+}
+
+.bet-info text {
+    color: #373737;
+    margin-left: 10rpx
+}
+
+.user-detail {
+    padding-bottom: 12%;
+    height: 75%;
+    overflow: scroll
+    /*position: fixed;
+    left: 0;
+    top: 0*/
+}
+
+.footer-btn {
+    width: 684rpx;
+    /*background-color: #fff;*/
+}
+
+.footer-btn-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12%
+}
+
+.wait-lottery {
+    color: #ffb06b
+}
+
+.not-lottery {
+    color: #ccc
+}
+
+.text-result {
+    color: #6c6c6c
+}
+
+.jc-content-rig-bet-fn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx
+}
+
+.betNo-src {
+    color: #1c00cf !important;
+    text-decoration: underline;
+}
+
+.img-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.bet-img {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.show {
+    display: block
+}
+
+.hide {
+    display: none
+}
+
+
+/*/内容*/

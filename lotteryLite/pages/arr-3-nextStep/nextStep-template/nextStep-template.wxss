@@ -1,0 +1,84 @@
+.betting_inf{
+  width: 708rpx;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+.betting_inf .inf_bg_top{
+  width: 100%;
+  height: 18rpx;
+  position: relative;
+  top: 10rpx;
+}
+.bg_bottom_box{
+  width:696rpx;
+  height: 20rpx;
+  margin-left: 8rpx;
+  border-top: 1px dashed #dad9d9
+}
+.inf_bg_bottom{
+  width: 100%;
+  height: 100%;
+  display: block
+}
+.direct_betting{
+  width: 616rpx;
+  padding: 0 40rpx;
+  height: 128rpx;
+  border-top: 1px dashed #dad9d9;
+  background-color: #fff;
+  margin-left: 8rpx;
+  position: relative;
+  z-index: 2    
+}
+.direct_betting .betting_num{
+  color: #e33e3c;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 36rpx;
+  width: 80%;
+  float: left;
+}
+.direct_betting .betting_statistics{
+  width: 80%;
+  /* height: 64rpx; */
+  float: left;
+  color: #9a9a9a;
+}
+.betting_statistics .sum{
+  margin-left: 44rpx;
+}
+.direct_betting .delete_one_btn{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 34rpx;
+  z-index: 3;
+}
+/* 提示 部分*/
+.notice{
+  width: 620rpx;
+  margin: 40rpx auto 20rpx;
+  font-family: '微软雅黑';
+  font-size:24rpx;
+  color: #969a99;
+}
+.notice text{
+  color: #ff7701
+}
+/* 阅读并同意协议 */
+.agreement{
+   width: 620rpx; 
+  margin: 0 auto;
+  font-size: 24rpx;
+  color: #969a99;
+}
+.agreement checkbox{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+.agreement text{
+  color: #ff7701;
+}

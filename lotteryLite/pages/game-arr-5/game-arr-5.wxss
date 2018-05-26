@@ -1,0 +1,5 @@
+/* pages/arr-5/arr-5.wxss */
+
+@import "../template-lottery-header/template-lottery-header.wxss";
+@import "../game-arr-3/arr-template/arr-template.wxss";
+@import "../footer-template/footer-template.wxss";

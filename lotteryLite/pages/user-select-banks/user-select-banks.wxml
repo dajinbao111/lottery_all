@@ -1,0 +1,10 @@
+<!-- <view class='container'>
+  <view class='records_list'>
+    <block wx:for="{{recordsItems}}">
+      <view class='lists'>
+        <text class='time'>{{item.time}}</text>
+        <text class='sum_money'>提现 {{item.money}} 元</text>
+      </view>
+    </block> 
+  </view>
+</view> -->

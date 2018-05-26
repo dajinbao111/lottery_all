@@ -1,0 +1,18 @@
+@import "../arr-3-nextStep/nextStep-template/nextStep-template.wxss";
+@import "../footer-template/footer-template.wxss";
+page{
+  background-color: #ecf0ef;
+  font-family: '微软雅黑';
+  font-size:28rpx;
+  padding-bottom: 300rpx;
+}
+.return_btn{
+  width: 708rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #fa8508;
+  margin: 20rpx auto 10rpx;
+  background-color: #fafafa;
+  box-shadow: 1px 1px 5px rgba(32, 32, 32, .2);
+}

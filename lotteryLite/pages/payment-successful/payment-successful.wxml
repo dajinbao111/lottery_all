@@ -1,0 +1,15 @@
+<view class="container">
+  <view class='content'>
+    <view>
+      <image class='suc_icon' src='../images/pay_succsessful.png'></image>
+    </view>
+    <view class='text'>订单支付成功！</view>
+    <view class='amount'>￥{{paySum}}</view>
+    <view class='notice'>关二爷体彩会尽快为您出票！</view>
+  </view>
+  <!-- 按钮 -->
+  <view class='btn_wrap'>
+    <button class='go_on' bindtap="urlIndex">继续购彩</button>
+    <button class='view_records' bindtap="urlRecord">查看购彩记录</button>
+  </view>
+</view>

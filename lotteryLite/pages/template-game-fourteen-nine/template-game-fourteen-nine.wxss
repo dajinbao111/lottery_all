@@ -1,0 +1,73 @@
+.game-fourteen-content-wrapper {
+    background-color: #ecf0ef;
+    font-size: 26rpx;
+    height: 140rpx;
+    width: 100%
+}
+
+.li-left {
+    text-align: center;
+    width: 170rpx;
+    height: 126rpx;
+    color: #565a59;
+    font-size: 24rpx;
+    padding-top: 10rpx
+}
+
+.li-right {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 126rpx
+}
+
+.li-right-team {
+    width: 228rpx;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1rpx solid #d8d8d8;
+}
+
+.li-right-left {
+    border-right: none
+}
+
+.li-vs {
+    width: 114rpx;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1rpx solid #d8d8d8;
+}
+
+.li-right-t {
+    color: #1c1c1c;
+    font-weight: bold
+}
+
+.li-right-ccc {
+    color: #a5a5a5
+}
+
+.li-right-right {
+    border-left: none
+}
+
+.li-right-team,
+.li-vs {
+    padding: 10rpx 0
+}
+
+.active {
+    background-color: #ff7701;
+}
+
+.active view {
+    color: #fff;
+}
+
+.game-fourteen-content {
+    padding-top: 134rpx
+}

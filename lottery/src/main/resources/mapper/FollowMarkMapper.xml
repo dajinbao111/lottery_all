@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.wisestar.lottery.mapper.FollowMarkMapper">
+
+    <select id="findCurrent" resultType="org.wisestar.lottery.entity.FollowMark">
+        select * from followMark where lotteryType in
+        <foreach collection="types" item="type" open="(" separator="," close=")">
+            #{type}
+        </foreach>
+        and createdDate >= date_format(now(),'%Y-%m-%d 00:00:00')
+    </select>
+</mapper>

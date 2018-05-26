@@ -1,0 +1,145 @@
+
+<import src="../template-account/template-account.wxml"  />
+<view class="foot-bet  {{admin?'authorities':''}}">
+  <view class="foot-bet-wrapper">
+    <!-- 头部 -->
+    <template is="bet-header-btn"></template>
+    <!--<view class="bet-header">
+    <view class="back-btn">添加/编辑赛事（已选2场）</view>
+  </view>
+  -->
+  <!-- /头部 -->
+  <!-- 已选择赛事部分 -->
+  <view class="issue-match-wrapper">
+    <view class="box listAuto" data-id="{{item.gameId}}" wx:for-item="matchItem" wx:for="{{betData}}">
+      <view class="list-item">
+        <view class="match-left pull-left">
+          <view class="mathch-no">{{matchItem.no}}</view>
+          <view class="mathch-type">{{matchItem.gameEventType}}</view>
+          <view class="mathch-time">{{matchItem.mathchTime}}</view>
+        </view>
+        <view class="mathc-right pull-left">
+          <text class="match-item-title">{{matchItem.hostTeam}} VS {{matchItem.guestTeam}}</text>
+          <view class="match-opt">
+            <view class="match-opt-top match-opt-item">
+              <view class="match-item-score">{{matchItem.hadRangqiu||'--'}}</view>
+              <view class="match-item-victory {{matchItem.hadWinFlag == true ? 'active':''}}" bindtap="chooseAwards">
+                <view>主胜</view>
+                <view>{{matchItem.hadWinRatio||'--'}}</view>
+              </view>
+              <view class="match-item-victory {{matchItem.hadDrawFlag == true ? 'active':''}}" bindtap="chooseAwards">
+                <view>主平</view>
+                <view>{{matchItem.hadDrawRatio||'--'}}</view>
+              </view>
+              <view class="match-item-victory {{matchItem.hadLoseFlag == true ? 'active':''}}" bindtap="chooseAwards">
+                <view>主负</view>
+                <view>{{matchItem.hadLoseRatio||'--'}}</view>
+              </view>
+            </view>
+            <view class="match-opt-bottom match-opt-item">
+              <view class="match-item-score match-item-score-last">{{matchItem.hhadRangqiu}}</view>
+              <view class="match-item-victory {{matchItem.hhadWinFlag == true ? 'active':''}}" bindtap="chooseAwards">
+                <view>让胜</view>
+                <view>{{matchItem.hhadWinRatio||'--'}}</view>
+              </view>
+              <view class="match-item-victory {{matchItem.hhadDrawFlag == true ? 'active':''}}" bindtap="chooseAwards">
+                <view>让平</view>
+                <view>{{matchItem.hhadDrawRatio||'--'}}</view>
+              </view>
+              <view class="match-item-victory {{matchItem.hhadLoseFlag == true ? 'active':''}}" bindtap="chooseAwards">
+                <view>让负</view>
+                <view>{{matchItem.hhadLoseRatio||'--'}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!--<view class="bet-del pull-right">
+        <view class="del-btn-wrapper" bindtap="delItem" data-gameid="{{matchItem.gameId}}">
+          <i class="iconfont icon-cuowu"></i>
+        </view>
+      </view>
+      -->
+      <view class="clear"></view>
+    </view>
+  </view>
+</view>
+<!-- 已选择赛事部分 -->
+<view class="match-agreement">
+  <view>
+    注:请认真阅读<span class="org">《关二爷足彩服务协议》</span>,
+    再进行进一步的购彩操作。</view>
+    <checkbox-group class="bet-checkbox" bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox checked="{{checkFlag}}"  />
+        我已阅读并同意《关二爷足彩服务协议》
+          </label>
+      </checkbox-group>
+    </view>
+  </view>
+</view>
+<!-- 管理员checkbox -->
+<view class="admin" wx:if="{{admin}}">
+  <radio-group class="radio-group pull-right" bindchange="adminRatio">
+    <label class="radio" wx:for="{{adminArr}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}"  />
+      {{item.value}}
+
+    </label>
+  </radio-group>
+  </view>
+  <!-- 投注 -->
+  <view class="cathectic-wrapper">
+    <view class="type-cathectic" bindtap="setModalStatus" data-status="1">
+      <text wx:if="{{typeWorld}}">过关方式:</text>
+      <span wx:else class="type-span">{{chooseStr}}</span>
+    </view>
+    <view class="multiple-cathectic">
+      <view class="bet-right-flexWrapper">
+        <span class="bet-right-world">投</span>
+        <view class="bet-wrapper">
+          <view class="icon-jian-wrapper" bindtap="minus">
+            <i class="iconfont icon-jianhao"></i>
+          </view>
+          <input class="bet-input" type="number" value="{{multiple}}" bindinput="bindMultiple"  />
+          <view class="icon-jia-wrapper " bindtap="add">
+            <i class="iconfont icon-iconjia"></i>
+          </view>
+        </view>
+        <span class="bet-right-world">倍</span>
+      </view>
+    </view>
+  </view>
+  <!-- /投注 -->
+  <!--<template is="account" data="{{...accountData}}">
+</template>
+-->
+<!-- 结算 -->
+<view class="account">
+  <view class="account-world">
+    <view class="account-itemWorld-wrapper">
+      <view>{{betSize}}注 {{multiple}}倍  {{costSum}}元</view>
+      <view>理论奖金：{{bonus}}元</view>
+    </view>
+  </view>
+  <view class="account-entBtn {{checkFlag?'':'bgccc'}}" bindtap="enter">
+    <view>确定</view>
+  </view>
+</view>
+<!-- 抽屉层 -->
+<view class="drawer_screen" bindtap="setModalStatus" data-status="0" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+  <view class="close_icon" bindtap="setModalStatus" data-status="0">×</view>
+  <view class="drawer_attr_content">
+    <view class="type-wrapper">
+      <view class="type-item  {{item.chooseFlag?'item-chooseabled':''}}  {{item.flag ? 'item-active':''}}"
+            data-id="{{index}}" bindtap="itemTypeChoose" wx:for="{{typeData}}">
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- /抽屉层 -->
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->

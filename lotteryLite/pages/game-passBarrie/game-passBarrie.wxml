@@ -1,0 +1,21 @@
+<!--<import src="../template-swiper/template-swiper.wxml"  />-->
+<import src="../template-football/template-football.wxml" />
+<import src="../template-account/template-account.wxml" />
+
+<view  id="game-passBarrie" >
+    <view class="refresh" >
+        <text>竞彩数据更新时间:{{deadline}}</text>
+        <span bindtap="refresh">刷新</span>
+    </view>
+    <view class="race-content-wrapper">
+        <template is="football" data="{{...accordionWrap}}"></template>
+    </view>
+</view>
+    <template is="account" data="{{...accountData}}"></template>
+
+
+<!--引入wetoast-->
+<import src="../../wetoast/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+<!--引入wetoastEnd-->
+

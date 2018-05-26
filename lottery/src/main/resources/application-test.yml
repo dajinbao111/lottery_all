@@ -1,0 +1,14 @@
+spring:
+  datasource: # 数据库连接配置
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.76.157.102:3306/lottery?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: lottery
+    password: lottery
+    hikari:
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+
+

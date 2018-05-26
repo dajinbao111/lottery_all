@@ -1,0 +1,16 @@
+<template name="swiperImg">
+    <view class="swiper-container">
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange">
+            <block wx:for="{{slider}}">
+                <swiper-item>
+                    <image src="{{item.picUrl}}" class="slide-images"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+      <view class="dots">
+        <block wx:for="{{slider}}" wx:key="unique">
+            <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+      </view>
+    </view>
+</template>

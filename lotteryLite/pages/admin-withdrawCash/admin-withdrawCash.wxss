@@ -1,0 +1,131 @@
+@import "../template-admin/template-admin.wxss";
+
+/*无更多*/
+
+.weui-loadmore {
+    width: 65%;
+    margin: 40rpx auto;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.weui-loadmore__tips {
+    display: inline-block;
+    vertical-align: middle;
+    color: #b7b6b6
+}
+
+.getBonus-list-wrapper {
+    padding: 20rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #ccc
+}
+
+.getBonus-top,
+.getBonus-bot {
+    display: flex;
+    font-size: 32rpx
+}
+
+.getBonus-bot {
+    margin: 20rpx 0;
+    /*color: #868686*/
+}
+
+.getBonus-top {
+    justify-content: space-between;
+    color: #868686
+}
+
+.nickName,
+.money,
+.time {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10rpx
+}
+
+.time {
+    font-size: 28rpx
+}
+
+.getBonus-bot {
+    justify-content: space-between
+}
+
+.bank-account {
+    color: #389225
+}
+
+.money {
+    color: #ff8913
+}
+
+.name {
+    padding-right: 20rpx
+}
+
+
+/*/无更多*/
+
+.item-btn-wrapper {
+    text-align: center;
+    margin: 0 auto
+}
+
+.item-btn {
+    text-align: center;
+    vertical-align: center;
+}
+
+.bank,
+.name {
+    font-size: 30rpx
+}
+
+
+/*无数据*/
+
+.no-data image {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+.no-data {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    margin: 300rpx auto;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.no-data .text {
+    color: #adacac;
+    margin-top: 120rpx;
+}
+
+.no-data .toIndex {
+    color: #ff5534;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-decoration: underline;
+}
+
+.green {
+    color: #389225
+}
+
+.detail-btn {
+    margin-left: 58rpx
+}
+
+.back-mine {
+    color: #ff5534
+}

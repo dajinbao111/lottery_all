@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: lottery
+  profiles:
+    active: test
+  cache:
+    type: ehcache
+    ehcache:
+      config: ehcache.xml
+  mail: # 邮件配置
+    host: smtp.exmail.qq.com
+    username: xu.zhang@wisestar.org
+    password: 4iQ&XUnYRE
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+  jackson:  # json日期格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  rabbitmq: # rabbitmq配置
+    host: 120.76.157.149
+    port: 5672
+    username: lottery
+    password: lottery
+    # http api获取队列内容大小
+    api: http://120.76.157.149:15672/api/queues
+
+mybatis:  # Mybatis配置
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+  type-aliases-package: org.wisestar.lottery.entity
+  mapper-locations: classpath:mapper/*.xml
+
+jwt:
+  # token 加密密钥
+  secret: Bv7b*ZrB79
+  # token 过期时间，以秒为单位，604800 是 一星期
+  expiration: 604800
+
+wechat:
+  appid: wxb3359252deb1547c
+  secret: 2cbbcc0106b44af9bdb2101e512dd19f
+
+qiniu:
+  domain: ozljnlsnf.bkt.clouddn.com
+  access-key: VxScTdeolc7dwbgBC5gKpDmpeNeh1PZEj0UlXdhS
+  secret-key: JNLpvFrM_kXCjIUJig5DZe_pGIgXhs7JVsl69t7p
+  bucket: lottery
+
+cron:
+  # 定时任务.竞彩过关抓取
+  crawlGameInfo:  1 */1 * * * ?
+  # 定时任务.竞彩过关彩果抓取
+  crawlGameInfoResult:  0 10 */1 * * ?
+  # 定时任务.14场抓取
+  crawlFourteenGames: 0 30 */1 * * ?
+  # 定时任务.14场彩果抓取
+  crawlFourteenGamesResult: 0 10 8-13 * * ?
+

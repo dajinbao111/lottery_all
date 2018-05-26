@@ -1,0 +1,3 @@
+@import "../template-lottery-header/template-lottery-header.wxss";
+@import "../game-arr-3/arr-template/arr-template.wxss";
+@import "../footer-template/footer-template.wxss";

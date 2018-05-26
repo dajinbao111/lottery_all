@@ -1,0 +1,25 @@
+page{
+  background-color: #ecf0ef
+}
+.container{
+  font-family: "微软雅黑";
+  font-size: 28rpx;
+}
+.records_list .lists{
+  height: 120rpx;
+  background: #fff;
+  line-height: 120rpx;
+  border-bottom: 1px solid #e2e1e1
+}
+.records_list .time{
+  max-width: 50%;
+  float: left;
+  padding-left: 20rpx;
+  color: #757575
+}
+.records_list .sum_money{
+  max-width: 50%;
+  float: right;
+  padding-right: 20rpx;
+  color: #757575;
+}

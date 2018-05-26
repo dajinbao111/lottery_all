@@ -1,0 +1,18 @@
+<import src="../../wetoast/wetoast.wxml"/>
+<view class="container" wx:if="{{dataFlag}}">
+  <block wx:for="{{itemList}}">
+      <view class='item_wrap'>
+          <view class="{{ item.changeAmount>0 ? 'incomeMoney':'expenditureMoney'}}">
+             <text wx:if="{{item.changeAmount>0}}">+</text>{{item.changeAmount}}
+          </view>
+          <view class='useType'>{{item.accountChange}}</view>
+          <view class='useDate'>{{item.recordTime}}</view>
+      </view>
+    </block>
+    <view class='hint_text'>{{loadingText}}</view>
+</view>
+<view class="noData" wx:else>
+   <image class="noDataImg" src='../images/noMoreData.png'></image> 
+   <view class="noData__tips">客官，暂无记录喲~~</view>
+</view> 
+<template is="wetoast" data="{{...__wetoast__}}"></template>

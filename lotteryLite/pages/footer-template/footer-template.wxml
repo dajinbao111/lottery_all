@@ -1,0 +1,47 @@
+<template name='footer_temp01'>
+  <view class='footer'>
+    <view class='dele_btn'>
+      <image src='../images/game-passBarrie-del.png'></image>
+    </view>
+    <view class='show_selection_inf'>
+      共 <text>
+      0</text>
+      注 <text>
+      0</text>
+      元
+    </view>
+      <button class='next_step_btn'>下一步</button>
+    </view>
+  </template>
+  <template name='footer_temp02'>
+    <view class='footer' wx:if="{{!singleFlag}}">
+      <view class='show_selection_inf' >
+        {{num}}注 {{multiple}}倍 {{total}}元
+      </view>
+      <button class='next_step_btn' bindtap="betEnter">确认</button>
+    </view>
+
+    <view class='footer' wx:else>
+      <view class='show_selection_inf single-inf' >
+        <view class="inf-top"> {{num}}注 {{multiple}}倍 {{total}}元</view>
+        <view class="inf-bot">理论奖金{{singleBouns}}元</view>
+      </view>
+      <button class='next_step_btn' bindtap="betEnter">确认</button>
+    </view>
+  </template>
+  <!-- 倍数模板 -->
+  <template name='multiple_temp'>
+    <view class='multiple_bar'>
+      <span class="bet-right-world">投</span>
+      <view class="bet-wrapper">
+        <view class="icon-jian-wrapper" bindtap="minus">
+          <i class="iconfont icon-jianhao"></i>
+        </view>
+        <input type='text' bindinput="bindMultiple" value="{{multiple}}"></input>
+        <view class="icon-jia-wrapper " bindtap="add">
+          <i class="iconfont icon-iconjia"></i>
+        </view>
+      </view>
+      <span class="bet-right-world">倍</span>
+    </view>
+  </template>

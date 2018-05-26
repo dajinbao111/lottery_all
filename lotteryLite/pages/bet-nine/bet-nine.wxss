@@ -1,0 +1,257 @@
+@import "../arr-3-nextStep/nextStep-template/nextStep-template.wxss";
+@import "../footer-template/footer-template.wxss";
+page {
+    height: 100%
+}
+
+.nine-bet {
+    height: 70%;
+    overflow-y: auto;
+    width: 100%;
+    background-color: #ecf0ef;
+    padding-bottom: 40rpx
+}
+
+
+/*content*/
+
+.issue-match-wrapper {
+    width: 702rpx;
+    position: relative;
+    background-color: #fff;
+    /*padding-bottom: 13rpx;*/
+    margin-top: 23rpx;
+    z-index: 2;
+    margin: 20rpx;
+    padding-bottom: 14rpx;
+    /*height: 100rpx;*/
+    box-shadow: 0px 10rpx 5rpx #ddd inset;
+    /*background: url('../images/wx-foot-bet-bgc.png') bottom left;*/
+}
+
+.issue-match-wrapper::after {
+    content: "";
+    position: absolute;
+    background-color: #8c8e8d;
+    width: 718rpx;
+    height: 10rpx;
+    border-radius: 20rpx;
+    z-index: 1;
+    left: -5rpx;
+    top: -6rpx
+}
+
+
+/*内容*/
+
+.issue-match-wrapper {
+    /*display: flex;
+    align-items: center;
+    justify-content: center*/
+}
+
+.issue-match {
+    margin: 0 auto;
+    display: flex;
+    width: 566rpx;
+    height: 97rpx;
+    align-items: center;
+    justify-content: center;
+    font-size: 24rpx;
+    line-height: 90rpx;
+    text-align: center;
+    padding: 37rpx 6rpx 27rpx 6rpx;
+    border-bottom: 1rpx dashed #d8d8d8;
+}
+
+.issue-no,
+.issue-homeTeam,
+.issue-visitingTeam,
+.issue-vs {
+    height: 97rpx;
+    line-height: 97rpx;
+    border: 1rpx solid #e6e6e6;
+}
+
+.issue-no {
+    width: 92rpx;
+    margin-right: 4rpx
+}
+
+.issue-homeTeam,
+.issue-visitingTeam {
+    width: 185rpx;
+}
+
+.issue-vs {
+    width: 94rpx;
+}
+
+
+/* 提示 部分*/
+
+.notice {
+    width: 620rpx;
+    margin: 40rpx auto 20rpx;
+    font-family: '微软雅黑';
+    font-size: 24rpx;
+    color: #969a99;
+}
+
+.notice text {
+    color: #ff7701
+}
+
+
+/* 阅读并同意协议 */
+
+.agreement {
+    width: 620rpx;
+    margin: 0 auto;
+    font-size: 24rpx;
+    color: #969a99;
+}
+
+.agreement checkbox {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 20rpx;
+}
+
+.agreement text {
+    color: #ff7701;
+}
+
+.active {
+    background-color: #ff7701;
+    color: #fff
+}
+
+
+/*权限判断高度*/
+
+.authorities {
+    height: 70%
+}
+
+.admin {
+    height: 74rpx;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 176rpx;
+    left: 0;
+}
+
+.radio-group {
+    /*margin-left: 400rpx;*/
+    margin-top: 6rpx;
+    text-align: right;
+    width: 100%;
+    padding-right: 10rpx
+}
+
+.radio {
+    margin-right: 20rpx
+}
+
+
+/*合买部分*/
+
+.together-sec {
+    height: 70rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #ccc;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 250rpx;
+    left: 0;
+}
+
+.multiple-cathectic-sec {
+    padding-left: 20rpx;
+    margin-top: 6rpx
+}
+
+.bet-right-flexWrapper-sec {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.bet-right-world-sec {
+    align-items: center;
+    line-height: 32rpx;
+}
+
+.bet-wrapper-sec {
+    position: relative;
+    width: 212rpx;
+    display: flex;
+    margin: 0 10rpx;
+    height: 56rpx;
+    border: 1rpx solid #c6cac9
+}
+
+.icon-jian-wrapper-sec,
+.icon-jia-wrapper-sec {
+    width: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56rpx
+}
+
+.icon-jianhao-sec {
+    width: 34rpx
+}
+
+.icon-iconjia-sec {
+    margin-bottom: 6rpx;
+    width: 32rpx
+}
+
+.bet-input-sec {
+    width: 110rpx;
+    border-left: 2rpx solid #e8e7e7;
+    border-right: 2rpx solid #e8e7e7;
+    height: 56rpx;
+    background-color: #e8e7e7;
+    text-align: center;
+    background-color: #fff;
+}
+
+.bet-right-world-sec {
+    align-items: center;
+    line-height: 32rpx;
+}
+
+.time-picker {
+    width: 200rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    border: 1rpx solid #ccc;
+    height: 54rpx;
+    margin-top: 6rpx
+}
+
+.picker {
+    height: 54rpx;
+    width: 200rpx;
+    line-height: 58rpx
+}
+
+.section {
+    display: flex;
+    margin-left: 100rpx;
+    line-height: 70rpx;
+    font-size: 32rpx
+}
+
+.section__title {
+    margin-right: 6rpx
+}

@@ -1,0 +1,26 @@
+<import src="single-template/single-template.wxml" />
+<import src="../template-account/template-account.wxml" />
+<!--<import src="../template-picker-header/template-picker-header.wxml" />-->
+
+<view class="game-single" wx:if="{{viewFlag}}">
+    <view class="refresh" >
+        <text>竞足单关数据更新时间:{{deadLine}}</text>
+        <span bindtap="refresh">刷新</span>
+    </view>
+    <view id="game-passBarrie">
+        <template is="single_footer_tem" data="{{...accordionWrap}}"></template> 
+  
+        <template is="account" data="{{...accountData}}"></template> 
+    </view>
+</view>
+<view wx:else class="no-data">
+  <image class='open_soon' src='../images/openSoon.png'></image> 
+  <view class='text'>即将开售，敬请期待！</view>
+  <navigator class='toIndex' url="../index/index" open-type="switchTab">
+     返回首页
+  </navigator>
+</view>
+<!--引入wetoast-->
+<import src="../../wetoast/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+<!--引入wetoastEnd-->

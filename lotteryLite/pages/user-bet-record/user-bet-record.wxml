@@ -1,0 +1,51 @@
+
+<scroll-view scroll-x="true" class="xscroll_bar">
+  <view class="menu_item {{index==activeIndex?'active':''}}" 
+        style="width:{{itemWidth}};" wx:for="{{menus}}"
+        bindtap="tabChange" data-index="{{index}}">
+      <view class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+      {{item.menu}}
+      </view>
+  </view>
+</scroll-view>
+<view class="noData" wx:if="{{dataFlag}}">
+   <image class="noDataImg" src='../images/noMoreData.png'></image> 
+   <view class="noData__tips">客官，暂无记录喲~~</view>
+   <navigator class='toIndex' url='../index/index' open-type='switchTab'>
+      去首页
+   </navigator> 
+</view>
+<scroll-view wx:else class="index-list" style="height:{{_height}}px" scroll-y="true" lower-threshold="35"
+             bindscrolltolower="fetchData">
+  <view class="scroll-wrapper">
+    <view wx:for="{{recordData}}" wx:key="unique" class="item-wrapper" data-betno="{{item.betNo}}" bindtap="navUserDetail">
+      <view class="item-img-wrapper">
+        <image src="{{item.typeImg}}"></image>
+      </view>
+      <view class="type-money-wrapper">
+        <view class="item-fw">{{item.lotteryTypeText}}</view>
+        <view>投注 <text class='sumMoney'>{{item.betAmount}}</text> 元</view>
+      </view>
+      <view class="item-status-wrapper">
+        <view wx:if="{{item.betStateText == '中奖' }}">
+          <view class="item-status item-fw item-winAmount">
+            {{item.betStateText}} <span wx:if="{{item.winAmount != 'null'}}">
+            {{item.winAmount}} </span>
+          </view>
+        </view>
+        <view wx:else>
+          <view class="item-status item-fw">{{item.betStateText}}</view>
+        </view>
+        <view>{{item.betTime}}</view>
+      </view>
+      <view>
+        <i class="iconfont icon-you"></i>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 引入wetoast -->
+<import src="../../wetoast/wetoast.wxml"  />
+<template is="wetoast" data="{{...__wetoast__}}"  />
+<!-- 引入wetoastEnd -->

@@ -1,0 +1,71 @@
+/*结算*/
+
+page {
+    position: relative
+}
+
+.account {
+    height: 8%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0
+}
+
+.del-trash image {
+    width: 54rpx;
+    height: 60rpx;
+    justify-content: center;
+    align-items: center
+}
+
+.del-trash {
+    width: 100rpx;
+    flex-grow: 1;
+    background-color: #6d6d6f;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.account-world {
+    flex-grow: 3;
+    background-color: #414247;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24rpx;
+    display: flex
+}
+
+.account-itemWorld-wrapper {
+    justify-content: center;
+    align-items: center
+}
+
+.account-entBtn {
+    background-color: #ff7701;
+    width: 150rpx;
+    flex-grow: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-entBtn view {
+    align-items: center;
+    justify-content: center;
+}
+
+.account-entBtn image {
+    width: 32rpx;
+    height: 44rpx
+}
+
+
+/*/结算*/

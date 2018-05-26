@@ -1,0 +1,52 @@
+@import "../template-lottery-header/template-lottery-header.wxss";
+@import "../template-account/template-account.wxss";
+
+/*提示*/
+
+.hint {
+    padding: 0 24rpx;
+    color: #909493;
+    line-height: 48rpx;
+    margin: 10rpx 0;
+}
+
+
+/*/提示*/
+
+
+/*内容*/
+
+.red-ball-content {
+    border-bottom: 1rpx solid #d8dbda
+}
+
+.blue-ball-content {
+    margin-top: 20rpx
+}
+
+.red-ball-content,
+.blue-ball-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20rpx;
+    margin: 0 35rpx
+}
+
+.ball-item {
+    text-align: center;
+    line-height: 70rpx;
+    border-radius: 50%;
+    box-shadow: 1px 2px 5px rgba(32, 32, 32, .2);
+    margin: 16rpx 12rpx;
+    width: 72rpx;
+    height: 70rpx;
+    background-color: #fff;
+}
+
+.red-ball-content .ball-item {
+    color: #ec1d30;
+}
+
+.blue-ball-content .ball-item {
+    color: #4cacf1
+}

@@ -1,0 +1,75 @@
+<import src='../footer-template/footer-template.wxml'  />
+<view class="nine-bet">
+  <!--<view class="bet-header">
+  <view class="back-btn">返回</view>
+</view>
+-->
+<view class="issue-match-wrapper">
+  <view class="issue-match" wx:for="{{mathData}}" wx:if="{{!typeFlag}}">
+    <view class="issue-no">{{item.no}}</view>
+    <view class="issue-homeTeam {{item.flag3 ? 'active' : ''}} ">{{item.homeTeam}}</view>
+    <view class="issue-vs {{item.flag1 ? 'active' : ''}}">VS</view>
+    <view class="issue-visitingTeam {{item.flag0 ? 'active' : ''}}">{{item.visitingTeam}}</view>
+  </view>
+  <view wx:if="{{typeFlag}}" class="issue-match">
+    <view class="issue-no">{{singleData.no}}</view>
+    <view class="issue-homeTeam {{singleData.flag3 ? 'active' : ''}} ">{{singleData.homeTeam}}</view>
+    <view class="issue-vs {{singleData.flag1 ? 'active' : ''}}">VS</view>
+    <view class="issue-visitingTeam {{singleData.flag0 ? 'active' : ''}}">{{singleData.visitingTeam}}</view>
+  </view>
+</view>
+<!-- 提示部分 -->
+<view class='notice'>
+  注：请认真阅读<text>《关二爷足彩服务协议》</text>,
+  再进行进一步的购彩操作。
+    </view>
+  <!-- 阅读并同意协议 -->
+  <view class='agreement'>
+    <checkbox checked='checked' style='transform:scale(.9)'></checkbox>
+    我已阅读并同意《关二爷足彩服务协议》
+  </view>
+
+</view>
+<!--<view class="admin" wx:if="{{admin}}">
+-->
+<view class="together-sec" wx:if="{{togetherFlag}}">
+  <view class="multiple-cathectic-sec">
+    <view class="bet-right-flexWrapper-sec">
+      <span class="bet-right-world-sec">共</span>
+      <view class="bet-wrapper-sec">
+        <view class="icon-jian-wrapper-sec" bindtap="minusPiece">
+          <i class="iconfont icon-jianhao icon-jianhao-sec"></i>
+        </view>
+        <input class="bet-input-sec" type="number" value="{{piece}}" bindinput="bindMultiplePiece"  />
+        <view class="icon-jia-wrapper-sec " bindtap="addPiece">
+          <i class="iconfont icon-iconjia icon-iconjia-sec"></i>
+        </view>
+      </view>
+      <span class="bet-right-world-sec">份</span>
+    </view>
+  </view>
+  <!-- picker -->
+  <view class="section">
+    <view class="section__title">截止: </view>
+    <picker mode="time" class="time-picker" value="{{time}}" 
+            bindchange="listenerTimePickerSelected">
+      <view class="picker">{{time}}</view>
+    </picker>
+  </view>
+</view>
+<view class="admin">
+  <radio-group class="radio-group pull-right" bindchange="adminRatio">
+    <label class="radio" wx:for="{{adminArr}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}"  />
+      {{item.value}}
+    </label>
+    </radio-group>
+  </view>
+  <!-- 倍數 -->
+  <template is="multiple_temp" data="{{...multipleData}}"></template>
+  <!-- 總金額 -->
+  <template is="footer_temp02" data="{{...totalData}}"></template>
+  <!-- 引入wetoast -->
+  <import src="../../wetoast/wetoast.wxml"  />
+  <template is="wetoast" data="{{...__wetoast__}}"  />
+  <!-- 引入wetoastEnd -->

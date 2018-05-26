@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.wisestar.lottery.mapper.GameInfoMapper">
+
+    <select id="findByLastUpdated" resultType="org.wisestar.lottery.entity.GameInfo">
+        select * from gameInfo where lastUpdated = #{lastUpdated} and dueTime > date_sub(now(), interval 10 minute)
+    </select>
+
+    <select id="findPointIsNull" resultType="org.wisestar.lottery.entity.GameInfo">
+        <![CDATA[
+        select * from gameInfo where point is null and
+        dueTime > date_sub(now(), interval 1 day) and dueTime < date_sub(now(), interval 100 minute)
+        ]]>
+    </select>
+
+</mapper>
